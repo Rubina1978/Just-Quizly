@@ -3,17 +3,42 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+  flex-direction: column;
+  min-height: 100vh;       /* ensures body fills viewport */
 }
 
+/* All screens hidden by default */
+.screen {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+/* Only the active screen is visible */
+.screen.active {
+  display: flex;
+}
+
+/* Container styling */
 .container {
-    max-width: 700px;
-    margin: 0, auto;
-    background-color: red;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: blanchedalmond;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
+  padding: 10px;
+}
+
+/* Buttons uniform size */
+.topic-btn, .difficulty-btn {
+  width: 200px;
+  text-transform: uppercase;
 }

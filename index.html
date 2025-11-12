@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Just Quizly</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just Quizly</title>
 
-    <!-- css -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
-      <!-- css -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="d-flex flex-column min-vh-100">
+<body class="d-flex justify-content-center align-items-center min-vh-100">
 
+  <!-- Landing Page -->
+  <div id="start-screen" class="screen container text-center active">
+    <h1 class="mb-3">Feeling Quizly?</h1>
+    <p class="lead mb-4">Test your brain, learn something new, and have fun!</p>
 
+    <h5 class="fw-bold mt-4 mb-3">Choose a Difficulty</h5>
+    <div class="d-flex flex-column align-items-center gap-2">
+      <button class="btn btn-success topic-btn" data-difficulty="easy">Easy</button>
+      <button class="btn btn-warning topic-btn" data-difficulty="medium">Medium</button>
+      <button class="btn btn-danger topic-btn" data-difficulty="hard">Hard</button>
+    </div>
 
+    <h5 class="fw-bold mt-4 mb-3">Choose a Topic</h5>
+    <div class="d-flex flex-column align-items-center gap-2 mb-4">
+      <button class="btn btn-info topic-btn" data-category="22">Geography</button>
+      <button class="btn btn-primary topic-btn" data-category="12">Music</button>
+      <button class="btn btn-secondary topic-btn" data-category="9">General Knowledge</button>
+    </div>
 
+    <button class="btn btn-lg btn-primary mt-4 mb-3" id="start-btn">Start Quiz</button>
+  </div>
 
-
-
-
-
-
-
-
-
-
-  <!-- javascript -->
+ 
+  <!-- JS -->
   <script src="script.js"></script>
-
-    <!-- bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
