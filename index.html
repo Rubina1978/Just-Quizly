@@ -12,31 +12,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="d-flex justify-content-center align-items-center min-vh-100">
-
-  <!-- Landing Page -->
-  <div id="start-screen" class="screen container text-center ">
+ <div id="start-screen" class="container screen text-center active">
     <h1 class="mb-3">Feeling Quizly?</h1>
-    <p class="lead mb-4">Test your brain, learn something new, and have fun!</p>
+    <p class="lead mb-3">Test your brain, learn something new, and have fun while at it!</p>
+    <p>Pick your topic and difficulty, then let's get Quizly!</p>
 
+    <!-- Difficulty -->
     <h5 class="fw-bold mt-4 mb-3">Choose a Difficulty</h5>
-    <div class="d-flex flex-column align-items-center gap-2">
-      <button class="btn btn-success topic-btn" data-difficulty="easy">Easy</button>
-      <button class="btn btn-warning topic-btn" data-difficulty="medium">Medium</button>
-      <button class="btn btn-danger topic-btn" data-difficulty="hard">Hard</button>
+    <div id="difficulty" class="d-flex flex-column align-items-center gap-2">
+      <button class="btn btn-success difficulty custom-btn-easy w-75" data-difficulty="easy">Easy</button>
+      <button class="btn btn-warning difficulty custom-btn-medium w-75" data-difficulty="medium">Medium</button>
+      <button class="btn btn-danger difficulty w-75" data-difficulty="hard">Hard</button>
     </div>
 
+    <!-- Topics -->
     <h5 class="fw-bold mt-4 mb-3">Choose a Topic</h5>
-    <div class="d-flex flex-column align-items-center gap-2 mb-4">
-      <button class="btn btn-info topic-btn" data-category="22">Geography</button>
-      <button class="btn btn-primary topic-btn" data-category="12">Music</button>
-      <button class="btn btn-secondary topic-btn" data-category="9">General Knowledge</button>
+    <div id="topics" class="d-flex flex-column align-items-center gap-2 mb-4">
+        <button class="topic-btn geography-btn w-75" data-category="22">Geography</button>
+  <button class="topic-btn music-btn w-75" data-category="12">Music</button>
+  <button class="topic-btn general-btn w-75" data-category="9">General Knowledge</button>
     </div>
 
-    <button class="btn btn-lg btn-primary mt-4 mb-3" id="start-btn">Start Quiz</button>
-  </div>
+    <button class="btn btn-lg btn-primary start-btn custom-btn mt-3 mb-2" id="start-btn">Start Quiz</button>
+</div>
 
-   <!-- Quiz Page  resource Codesistency build 15 projects html css java script-->
-  <div id="quiz-screen" class="screen container active">
+   <!-- Quiz Page  resource Codesistency build 15 projects html css java script -->
+  <div id="quiz-screen" class=" container screen ">
     <h2 id="quiz-questions" class="question-text">Questions appear here</h2>
     <div class="quiz-info">
         <p>Question <span id="current-question" >1</span> of <span>5</span></p>
@@ -57,7 +58,7 @@
 
 
   <!-- End Page -->
-  <div id="end-screen" class="screen container text-center">
+  <div id="end-screen" class="screen container text-center ">
     <h1>Quiz Finished!</h1>
     <div class="result-info"></div>
     <p>you scored <span id="final-score">2</span> out of <span id="max-score">5</span></p>

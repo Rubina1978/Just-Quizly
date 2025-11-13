@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 }
 body {
   margin: 0;
@@ -9,7 +10,10 @@ body {
   justify-content: center; /* horizontal center */
   align-items: center;     /* vertical center */
   flex-direction: column;
-  min-height: 100vh;       /* ensures body fills viewport */
+  min-height: 100vh; 
+  font-family: "Josefin Sans" sans-serif;   
+  background-color: #f907fc;
+  background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);; 
 }
 
 /* All screens hidden by default */
@@ -21,6 +25,8 @@ body {
  
 }
 
+
+
 /* Only the active screen is visible */
 .screen.active {
   display: flex;
@@ -31,25 +37,153 @@ body {
   max-width: 700px;
   width: 90%;
   margin: 0 auto;
-  background-color: blanchedalmond;
+  background-color: #F7E7CE;
   border-radius: 10px;
   box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
   padding: 10px;
 }
 
+.lead {
+    font-weight: 600;
+}
+
+
+
+#start-screen p {
+    font-size: 1.1rem;
+}
+/* buttons */
+.custom-btn-easy{
+    background-color: rgb(38, 128, 0);
+    border: 2px outset;
+     transition: transform 0.2s, background-color 0.2s;
+}
+.custom-btn-medium {
+    background-color: rgb(255, 174, 0);
+    border: 2px outset;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.custom-btn-hard {
+    background-color: rgb(255, 25, 0);
+    border: 2px outset;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* topics buttons - general */
+.geography-btn {
+  background-color: #ff854d;
+  color: white;
+  border: none;
+  transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
+  box-shadow: none; /* remove Bootstrap shadow */
+}
+
+/* Hover and focus */
+.geography-btn:hover {
+  background-color: #842e06;
+  color: white;
+  box-shadow: none;
+  transition: 0.3s ease-in-out;
+}
+
+.geography-btn:active {
+  background-color: #ff854d; 
+  color: white;
+  box-shadow: none;
+  transform: scale(0.97); 
+}
+/* music */
+.music-btn {
+  background-color: #7dd6ef;
+  color: white;
+  border: none;
+  transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
+  box-shadow: none; /* remove Bootstrap shadow */
+}
+
+/* Hover and focus */
+.music-btn:hover {
+  background-color: #093f4e;
+  color: white;
+  box-shadow: none;
+  transition: 0.3s ease-in-out;
+}
+
+/* Active (pressed) */
+.music-btn:active {
+  background-color: #093f4e; 
+  color: white;
+  box-shadow: none;
+  transform: scale(0.97); 
+}
+/* general knowledge */
+.general-btn {
+  background-color: #b27bdc;
+  color: white;
+  border: none;
+  transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
+  box-shadow: none; /* remove Bootstrap shadow */
+}
+
+/* Hover and focus */
+.general-btn:hover {
+  background-color: #480e7a;
+  color: white;
+  box-shadow: none;
+  transition: 0.3s ease-in-out;
+
+}
+
+/* Active (pressed) */
+.general-btn:active {
+  background-color: #093f4e; 
+  color: white;
+  box-shadow: none;
+  transform: scale(0.97); 
+ 
+}
+
+
 /* Buttons uniform size */
-.topic-btn, .difficulty-btn {
-  width: 200px;
+#difficulty, #topics {
+  width: 75%;
   text-transform: uppercase;
 }
-.quiz-info  {
+
+.topic-btn {
+font-size: 1.2rem;
+  width: 75%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.1s, transform 0.1s;
+}
+
+/* start button */
+
+.start-btn, .custom-btn {
+    width: 200px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: midnightblue;
+    border: 2px outset;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+
+/* quiz screen */
+.quiz-info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.8rem;
-  align-items: center; 
-  width: 100%;          
-  padding: 0 10px;   
+  width: 100%;
+  padding: 0 10px;
 }
+
 
 .question-text {
  color: #333;
@@ -92,7 +226,7 @@ body {
 }
 
 .progress {
-    background-color: red;
+   color: rgb(255, 77, 0);
   
 }
 
