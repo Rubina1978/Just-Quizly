@@ -284,11 +284,19 @@ font-size: 1.2rem;
   color: white;
 }
 /* correct and incorrect indicators */
-.correct {
-  color:green
+.answer-btn.correct {
+  background-color:green;
+  color: white;
+
 }
-.incorrect {
- color: red
+.answer-btn.incorrect {
+ background-color: red;
+ color: white;
+}
+
+.answer-btn.disabled {
+  pointer-events: none;
+  opacity: 0.6;
 }
 /* progress */
 .progress-bar {
