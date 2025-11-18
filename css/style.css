@@ -1,21 +1,32 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 }
 body {
-  margin: 0;
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* horizontal center */
-  align-items: center;     /* vertical center */
-  flex-direction: column;
-  min-height: 100vh; 
-  font-family: "Josefin Sans" sans-serif;   
+  justify-content: flex-start; /* container stays top-centered */
+  align-items: center;
+  padding-top: 20px; /* breathing room */
+  font-family: "Josefin Sans", sans-serif;
   background-color: #f907fc;
   background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);; 
 }
 
+h5 {
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+p {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
 /* All screens hidden by default */
 .screen {
   display: none;
@@ -57,77 +68,91 @@ body {
     background-color: rgb(38, 128, 0);
     border: 2px outset;
      transition: transform 0.2s, background-color 0.2s;
+    font-size: 1.2rem;
+     
+
 }
 .custom-btn-medium {
-    background-color: rgb(255, 174, 0);
+    background-color: rgb(212, 140, 7);
     border: 2px outset;
     transition: transform 0.2s, background-color 0.2s;
+    font-size: 1.2rem;
+    
 }
 
 .custom-btn-hard {
     background-color: rgb(255, 25, 0);
     border: 2px outset;
     transition: transform 0.2s, background-color 0.2s;
+    font-size: 1.2rem;
+    
+}
+
+.custom-btn-hard:active, .custom-btn-medium:active, .custom-btn-easy:active {
+  transform: scale(0.97)
 }
 
 /* topics buttons - general */
-.geography-btn {
+
+
+.topic-btn-geography {
   background-color: #ff854d;
-  color: white;
+  color: rgb(31, 3, 3);
   border: none;
   transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
   box-shadow: none; /* remove Bootstrap shadow */
 }
 
 /* Hover and focus */
-.geography-btn:hover {
+.topic-btn-geography:hover {
   background-color: #842e06;
   color: white;
   box-shadow: none;
   transition: 0.3s ease-in-out;
 }
 
-.geography-btn:active {
-  background-color: #ff854d; 
-  color: white;
-  box-shadow: none;
-  transform: scale(0.97); 
+.topic-btn-geography:active {
+  background-color: #5a1f04;
+  transform: scale(0.98);
+ 
 }
 /* music */
-.music-btn {
+.topic-btn-music{
   background-color: #7dd6ef;
-  color: white;
+  color: rgb(33, 7, 99) !important;
   border: none;
   transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
   box-shadow: none; /* remove Bootstrap shadow */
+  
 }
 
 /* Hover and focus */
-.music-btn:hover {
+.topic-btn-music:hover {
   background-color: #093f4e;
-  color: white;
+  color: white !important;
   box-shadow: none;
   transition: 0.3s ease-in-out;
 }
 
 /* Active (pressed) */
-.music-btn:active {
+.topic-btn-music:active {
   background-color: #093f4e; 
   color: white;
   box-shadow: none;
   transform: scale(0.97); 
 }
 /* general knowledge */
-.general-btn {
+.topic-btn-general {
   background-color: #b27bdc;
   color: white;
   border: none;
   transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
   box-shadow: none; /* remove Bootstrap shadow */
+  
 }
 
 /* Hover and focus */
-.general-btn:hover {
+.topic-btn-general:hover {
   background-color: #480e7a;
   color: white;
   box-shadow: none;
@@ -136,7 +161,7 @@ body {
 }
 
 /* Active (pressed) */
-.general-btn:active {
+.topic-btn-general:active {
   background-color: #093f4e; 
   color: white;
   box-shadow: none;
@@ -151,7 +176,7 @@ body {
   text-transform: uppercase;
 }
 
-.topic-btn {
+.topic-btn, .difficulty{
 font-size: 1.2rem;
   width: 75%;
   padding: 5px 10px;
@@ -159,20 +184,30 @@ font-size: 1.2rem;
   border-radius: 6px;
   color: white;
   cursor: pointer;
+  text-transform: uppercase;
   transition: background-color 0.1s, transform 0.1s;
 }
 
 /* start button */
 
-.start-btn, .custom-btn {
+.custom-btn {
     width: 200px;
     font-size: 1.2rem;
     text-transform: uppercase;
     background-color: midnightblue;
-    border: 2px outset;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: transform 0.1s, background-color 0.1s;
+    
+}
+.custom-btn:hover {
+  background-color: rgb(2, 2, 18);
+  border: none;
+  
 }
 
+.custom-btn:active{
+  transform: scale(0.97);
+  background-color: midnightblue!important; /*override default active style*/
+}
 
 /* quiz screen */
 .quiz-info {
@@ -182,9 +217,11 @@ font-size: 1.2rem;
   margin-bottom: 0.8rem;
   width: 100%;
   padding: 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
-
+/* questions */
 .question-text {
  color: #333;
  font-size: 1.5rem;
@@ -203,8 +240,8 @@ font-size: 1.2rem;
   max-width: 600px;
   margin: 1rem auto;
 }
-
-.answer-btn {
+/* answer buttons */
+ .custom-btn-answer {
   width: 100%;
   min-height: 45px;
   background-color: aliceblue;
@@ -214,9 +251,46 @@ font-size: 1.2rem;
   white-space: normal;
   word-wrap: break-word;
   padding: 10px;
-  font-size: 1rem;
-  transition: background-color 0.2s, transform 0.1s;
+  font-weight: 600;
+  
 }
+.custom-btn-answer:hover{
+  background-color:#e2ceaf;
+  transition: 0.3s ease-in-out;
+}
+/* recommended fix for color disapearing on press by chatgpt*/
+.custom-btn-answer:active {
+  transform: scale(0.97);
+  background-color: aliceblue !important;
+  color: inherit;
+  box-shadow: none;
+  
+}
+/* next question button */
+.custom-btn-next {
+  width: 100%;
+  min-height: 25px;
+  background-color: rgb(233, 183, 123);
+  border: outset;
+  border-radius: 8px;
+  text-align: center;
+  padding: 5 10px;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.custom-btn-next:hover {
+  background-color: rgb(190, 143, 84);
+  transition: 0.3s ease-in-out;
+  color: white;
+}
+/* correct and incorrect indicators */
+.correct {
+  color:green
+}
+.incorrect {
+ color: red
+}
+/* progress */
 .progress-bar {
     width: 100%;
     height:10px;
@@ -228,6 +302,32 @@ font-size: 1.2rem;
 .progress {
    color: rgb(255, 77, 0);
   
+}
+
+/* end screen */
+
+.score, .message {
+    font-size: 1.3rem;
+    margin: 15px 0;
+    font-weight: 600;
+} 
+.custom-btn-restart {
+    width: 200px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background-color: midnightblue;
+    transition: transform 0.1s, background-color 0.1s;
+    
+}
+.custom-btn-restart:hover {
+  background-color: rgb(2, 2, 18);
+  border: none;
+  
+} 
+
+.custom-btn-restart:active{
+  transform: scale(0.97);
+  background-color: midnightblue!important; /*override default active style*/
 }
 
 @media (min-width: 576px) {
