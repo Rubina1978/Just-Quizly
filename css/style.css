@@ -171,12 +171,12 @@ p {
 
 
 /* Buttons uniform size */
-#difficulty, #topics {
+#dificulty, #topics {
   width: 75%;
   text-transform: uppercase;
 }
 
-.topic-btn, .difficulty{
+.topic-btn, .dificulty{
 font-size: 1.2rem;
   width: 75%;
   padding: 5px 10px;
