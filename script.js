@@ -14,16 +14,15 @@ const score = document.getElementById('final-score');
 const scoreMax = document.getElementById('max-score');
 const message = document.getElementById('message');
 
-let questions = [];
+
 let scorePoints = 0;
 let progressBarWidth = 0;
 let currentQuestionIndex = 0;
 
 // function to prepare quiz based on selected difficulty and topics corrected with help of chatgpt
-function prepareQuiz() {
-    // these are scoped inside the function
-    let selectedDifficulty = "";
+let selectedDifficulty = "";
     let selectedTopic = "";
+function prepareQuiz() {
 
     const startScreen = document.getElementById('start-screen');
     const quizScreen = document.getElementById('quiz-screen');
@@ -48,7 +47,7 @@ function prepareQuiz() {
     });
 
     // start button
-    startBtn.addEventListener('click', () => {
+    startBtn.addEventListener('click', async () => {
         if (!selectedDifficulty || !selectedTopic) {
             alert("Please select difficulty and topic before starting the quiz!");
             return;
@@ -56,8 +55,28 @@ function prepareQuiz() {
 
         startScreen.classList.remove('active');
         quizScreen.classList.add('active');
-        console.log("Quiz started with:", selectedDifficulty, selectedTopic);
+    /*updated to make fetch questions work*/
+        questions = await fetchQuestions(selectedDifficulty, selectedTopic);
+        console.log("Fetched questions", questions);
     });
 }
 
 prepareQuiz();
+
+/* get questions, code corrected with chatgpt*/
+async function fetchQuestions(difficulty, topic) {
+    const apiUrl = `https://opentdb.com/api.php?amount=10&category=${topic}&difficulty=${difficulty}&type=multiple`;
+
+    try {
+       const response = await fetch(apiUrl);
+       if (!response.ok) {
+        throw new error ('error fetching questions');
+       }
+    const data = await response.json();
+    return data.results;
+    } catch (error) {
+        console.log(error);
+        return [];
+    }  
+}
+
