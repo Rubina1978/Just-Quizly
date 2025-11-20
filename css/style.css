@@ -171,12 +171,12 @@ p {
 
 
 /* Buttons uniform size */
-#dificulty, #topics {
+#difficulty, #topics {
   width: 75%;
   text-transform: uppercase;
 }
 
-.topic-btn, .dificulty{
+.topic-btn, .difficulty{
 font-size: 1.2rem;
   width: 75%;
   padding: 5px 10px;
@@ -284,17 +284,17 @@ font-size: 1.2rem;
   color: white;
 }
 /* correct and incorrect indicators */
-.answer-btn.correct {
+  .custom-btn-answer.correct {
   background-color:green;
   color: white;
 
 }
-.answer-btn.incorrect {
+ .custom-btn-answer.incorrect {
  background-color: red;
  color: white;
 }
 
-.answer-btn.disabled {
+.custom-btn-answer.disabled {
   pointer-events: none;
   opacity: 0.6;
 }

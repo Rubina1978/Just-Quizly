@@ -2,12 +2,12 @@
 
 
 /* buttons and selects */
-const dificultySelect = document.querySelectorAll('.dificulty'); /*recommended by chatgpt*/
+const difficultySelect = document.querySelectorAll('.difficulty'); /*recommended by chatgpt*/
 const topicsSelect = document.querySelectorAll('.topic-btn'); /*best practice by chatgpt*/
 const startBtn = document.getElementById('start-btn');
 const currentQuestionEl = document.getElementById('current-question-text');
 const answersContainer = document.getElementById("answers-container");
-const nextbtn = document.getElementById('next-btn');
+const nextbtn = document.getElementById('custom-btn-next');
 const progress = document.getElementById('progress');
 const score = document.getElementById('score');
 const endScore = document.getElementById('final-score');
@@ -24,17 +24,18 @@ let progressBarWidth = 0;
 let currentQuestionIndex = 0;
 
 // function to prepare quiz based on selected difficulty and topics corrected with help of chatgpt
+let questions = []
 let selectedDifficulty = "";
-    let selectedTopic = "";
+let selectedTopic = "";
 function prepareQuiz() {
 
     
 
     // difficulty buttons
-    const difficultyButtons = document.querySelectorAll('.dificulty');
+    const difficultyButtons = document.querySelectorAll('.difficulty');
     difficultyButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            selectedDifficulty = btn.dataset.dificulty;
+            selectedDifficulty = btn.dataset.difficulty;
             console.log('Selected difficulty:', selectedDifficulty);
         });
     });
@@ -60,6 +61,7 @@ function prepareQuiz() {
     /*updated to make fetch questions work*/
         questions = await fetchQuestions(selectedDifficulty, selectedTopic);
         console.log("Fetched questions", questions);
+        displayQuestions();
     });
 }
 
@@ -84,16 +86,15 @@ async function fetchQuestions(difficulty, topic) {
 
 /*display and decode question had to build with chatgpt*/
 function displayQuestions() {
-    const answerContainer = document.getElementById("answer-container");
+    const answersContainer = document.getElementById("answers-container");
     const questionEl = document.getElementById("current-question-text");
 
     const question = questions[currentQuestionIndex];
+    answersContainer.innerHTML = "";
+    
+    questionEl.textContent = decodeHTML(question.question);
 
-    questions.innerHTML = "";
-
-    questionEl.textContent = decodeHTML(questions.question);
-
-    const answers = [...questions.incorrect_answers, questions.correct_answer];
+    const answers = [...question.incorrect_answers, question.correct_answer];
 
     /*buttons for each question*/
     answers.forEach(answerText => {
@@ -101,8 +102,30 @@ function displayQuestions() {
         btn.classList.add("custom-btn-answer");
         btn.textContent = decodeHTML(answerText);
         
-        btn.addEventListener("click", () => selectAnswer(answerText, q.correct_answer, q.incorrect_answers));
+        btn.addEventListener("click", () => selectAnswer(answerText, question.correct_answer, question.incorrect_answers));
 
         answersContainer.appendChild(btn);
     });
 }
+
+function decodeHTML(str) {
+    const txt = document.createElement('textarea');
+    txt.innerHTML = str;
+    return txt.value;
+}
+
+function selectAnswer(answer, correct, incorrect) {
+    const buttons = answersContainer.querySelectorAll("button");
+    buttons.forEach(btn => {
+        btn.classList.add("disabled");
+        const btnText = btn.textContent;
+        if(btnText === decodeHTML(correct)) {
+            btn.classList.add("correct");
+        }
+         if(btnText === decodeHTML(answer) && answer !== correct) {
+            btn.classList.add("incorrect");
+        }
+    });
+    
+}
+
