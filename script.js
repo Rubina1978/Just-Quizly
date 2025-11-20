@@ -4,15 +4,19 @@
 /* buttons and selects */
 const dificultySelect = document.querySelectorAll('.dificulty'); /*recommended by chatgpt*/
 const topicsSelect = document.querySelectorAll('.topic-btn'); /*best practice by chatgpt*/
-const startQuiz = document.getElementById('start-btn');
-const QuizQuestions = document.getElementById('quiz-questions');
-const currentQuestion = document.getElementById('current-question');
-const answerButtons = document.querySelectorAll('.answer-btn');
+const startBtn = document.getElementById('start-btn');
+const currentQuestionEl = document.getElementById('current-question-text');
+const answersContainer = document.getElementById("answers-container");
 const nextbtn = document.getElementById('next-btn');
 const progress = document.getElementById('progress');
-const score = document.getElementById('final-score');
+const score = document.getElementById('score');
+const endScore = document.getElementById('final-score');
 const scoreMax = document.getElementById('max-score');
 const message = document.getElementById('message');
+
+const startScreen = document.getElementById('start-screen');
+    const quizScreen = document.getElementById('quiz-screen');
+    const endScreen = document.getElementById('end-screen');
 
 
 let scorePoints = 0;
@@ -24,9 +28,7 @@ let selectedDifficulty = "";
     let selectedTopic = "";
 function prepareQuiz() {
 
-    const startScreen = document.getElementById('start-screen');
-    const quizScreen = document.getElementById('quiz-screen');
-    const startBtn = document.getElementById('start-btn');
+    
 
     // difficulty buttons
     const difficultyButtons = document.querySelectorAll('.dificulty');
@@ -80,3 +82,27 @@ async function fetchQuestions(difficulty, topic) {
     }  
 }
 
+/*display and decode question had to build with chatgpt*/
+function displayQuestions() {
+    const answerContainer = document.getElementById("answer-container");
+    const questionEl = document.getElementById("current-question-text");
+
+    const question = questions[currentQuestionIndex];
+
+    questions.innerHTML = "";
+
+    questionEl.textContent = decodeHTML(questions.question);
+
+    const answers = [...questions.incorrect_answers, questions.correct_answer];
+
+    /*buttons for each question*/
+    answers.forEach(answerText => {
+        const btn = document.createElement("button");
+        btn.classList.add("custom-btn-answer");
+        btn.textContent = decodeHTML(answerText);
+        
+        btn.addEventListener("click", () => selectAnswer(answerText, q.correct_answer, q.incorrect_answers));
+
+        answersContainer.appendChild(btn);
+    });
+}

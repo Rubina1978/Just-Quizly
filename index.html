@@ -38,21 +38,26 @@
 
    <!-- Quiz Page  resource Codesistency build 15 projects html css java script -->
   <div id="quiz-screen" class="container screen ">
-    <h2 id="quiz-questions" class="question-text">Questions appear here</h2>
+    <p id="current-question-text" class="question-text">Questions appear here</p>
+
     <div class="quiz-info">
-        <p>Question <span id="current-question" >1</span> of <span>5</span></p>
+        <p>Question <span id="current-question-number" >1</span> of <span id="total-questions">5</span></p>
         <p>Score: <span id="score">0</span></p>
     </div>
+
         <div id="answers-container" class="answers-container">
     <!-- answer buttons will be inserted here from js code later-->
-     <button class="btn answer-btn custom-btn-answer">1</button>
+
+     <!-- <button class="btn answer-btn custom-btn-answer">1</button>
      <button class="btn answer-btn custom-btn-answer">2</button>
      <button class="btn answer-btn custom-btn-answer">3</button>
-     <button class="btn answer-btn custom-btn-answer">4</button>
+     <button class="btn answer-btn custom-btn-answer">4</button> -->
   </div>
-  <div>
-     <button class="btn next-btn custom-btn-next" id="custom-btn-next">Next Question</button>
-  </div>
+  
+  <!-- next question -->
+     <button class="btn next-btn custom-btn-next w-50" id="custom-btn-next">Next Question</button>
+  
+     <!-- progress bar -->
   <div class="progress-bar">
     <div id="progress" class="progress"></div>
   </div>
