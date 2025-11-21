@@ -9,7 +9,6 @@ const currentQuestionEl = document.getElementById('current-question-text');
 const answersContainer = document.getElementById("answers-container");
 const nextbtn = document.getElementById('custom-btn-next');
 const progress = document.getElementById('progress');
-const score = document.getElementById('score');
 const endScore = document.getElementById('final-score');
 const scoreMax = document.getElementById('max-score');
 const message = document.getElementById('message');
@@ -84,10 +83,15 @@ async function fetchQuestions(difficulty, topic) {
     }  
 }
 
-/*display and decode question had to build with chatgpt*/
+/*display and decode question had to build with chatgpt */
 function displayQuestions() {
     const answersContainer = document.getElementById("answers-container");
     const questionEl = document.getElementById("current-question-text");
+    
+    /*display current question number*/
+    document.getElementById("current-question-number").textContent =
+    currentQuestionIndex + 1;
+
 
     const question = questions[currentQuestionIndex];
     answersContainer.innerHTML = "";
@@ -96,7 +100,7 @@ function displayQuestions() {
 
     const answers = [...question.incorrect_answers, question.correct_answer];
 
-    /*buttons for each question*/
+    /*buttons for each question*/   
     answers.forEach(answerText => {
         const btn = document.createElement("button");
         btn.classList.add("custom-btn-answer");
@@ -105,27 +109,49 @@ function displayQuestions() {
         btn.addEventListener("click", () => selectAnswer(answerText, question.correct_answer, question.incorrect_answers));
 
         answersContainer.appendChild(btn);
+        
     });
+    
 }
-
+/* decoding questions to html text, code help from mentor*/
 function decodeHTML(str) {
     const txt = document.createElement('textarea');
     txt.innerHTML = str;
     return txt.value;
 }
-
+/* handling answers from questions and showing correct and incorrect, code helped by mentor Tim*/
 function selectAnswer(answer, correct, incorrect) {
     const buttons = answersContainer.querySelectorAll("button");
+
+
     buttons.forEach(btn => {
         btn.classList.add("disabled");
         const btnText = btn.textContent;
-        if(btnText === decodeHTML(correct)) {
+        if (btnText === decodeHTML(correct)) {
             btn.classList.add("correct");
         }
-         if(btnText === decodeHTML(answer) && answer !== correct) {
+         if (btnText === decodeHTML(answer) && answer !== correct) {
             btn.classList.add("incorrect");
         }
+    
     });
     
-}
+    
+        /*adding score*/
+        const isCorrect = answer === correct;
+        if (isCorrect) {
+        scorePoints++;
+        document.getElementById("score").textContent = scorePoints;
+        }
+        setTimeout(() => {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                displayQuestions();
+            } else {
+                showFinalScore();
+            }
+        }, 1000);
+        
+    }
+     
 
