@@ -94,12 +94,18 @@ function displayQuestions() {
 
 
     const question = questions[currentQuestionIndex];
-    answersContainer.innerHTML = "";
-    
+
+    answersContainer.innerHTML = "";  
     questionEl.textContent = decodeHTML(question.question);
 
-    const answers = [...question.incorrect_answers, question.correct_answer];
-
+     let answers = [
+        ...question.incorrect_answers,
+        question.correct_answer
+    ];
+    
+    // SHUFFLE THE ANSWERS
+    answers = shuffle(answers);
+    
     /*buttons for each question*/   
     answers.forEach(answerText => {
         const btn = document.createElement("button");
@@ -113,7 +119,9 @@ function displayQuestions() {
     });
   
 }
-
+function shuffle(array) {
+    return [...array].sort(() => Math.random() - 0.5);
+}
 
 /* decoding questions to html text, code help from mentor*/
 function decodeHTML(str) {
