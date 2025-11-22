@@ -111,14 +111,18 @@ function displayQuestions() {
         answersContainer.appendChild(btn);
         
     });
-    
+  
 }
+
+
 /* decoding questions to html text, code help from mentor*/
 function decodeHTML(str) {
     const txt = document.createElement('textarea');
     txt.innerHTML = str;
     return txt.value;
 }
+
+
 /* handling answers from questions and showing correct and incorrect, code helped by mentor Tim*/
 function selectAnswer(answer, correct, incorrect) {
     const buttons = answersContainer.querySelectorAll("button");
@@ -129,17 +133,18 @@ function selectAnswer(answer, correct, incorrect) {
         const btnText = btn.textContent;
         if (btnText === decodeHTML(correct)) {
             btn.classList.add("correct");
-        }
-         if (btnText === decodeHTML(answer) && answer !== correct) {
+        } 
+        if (btnText === decodeHTML(answer) && answer !== correct) {
             btn.classList.add("incorrect");
         }
     
     });
-    
+
     
         /*adding score*/
-        const isCorrect = answer === correct;
-        if (isCorrect) {
+    
+        
+        if (answer === correct) {
         scorePoints++;
         document.getElementById("score").textContent = scorePoints;
         }
@@ -151,7 +156,10 @@ function selectAnswer(answer, correct, incorrect) {
                 showFinalScore();
             }
         }, 1000);
-        
-    }
-     
 
+    }
+      
+function showFinalScore(){
+   quizScreen.classList.remove("active");
+      endScreen.classList.add("active");
+}
