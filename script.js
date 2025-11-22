@@ -57,6 +57,7 @@ function prepareQuiz() {
 
         startScreen.classList.remove('active');
         quizScreen.classList.add('active');
+        
     /*updated to make fetch questions work*/
         questions = await fetchQuestions(selectedDifficulty, selectedTopic);
         console.log("Fetched questions", questions);
@@ -87,38 +88,37 @@ async function fetchQuestions(difficulty, topic) {
 function displayQuestions() {
     const answersContainer = document.getElementById("answers-container");
     const questionEl = document.getElementById("current-question-text");
-    
-    /*display current question number*/
-    document.getElementById("current-question-number").textContent =
-    currentQuestionIndex + 1;
 
+    document.getElementById("current-question-number").textContent = currentQuestionIndex + 1;
 
     const question = questions[currentQuestionIndex];
+    answersContainer.innerHTML = "";
+    questionEl.textContent = decodeHTML(question.question).trim();
 
-    answersContainer.innerHTML = "";  
-    questionEl.textContent = decodeHTML(question.question);
+    const decodedCorrect = decodeHTML(question.correct_answer).trim();
 
-     let answers = [
+    let answers = [
         ...question.incorrect_answers,
         question.correct_answer
     ];
-    
-    // SHUFFLE THE ANSWERS
+
     answers = shuffle(answers);
-    
-    /*buttons for each question*/   
+
     answers.forEach(answerText => {
         const btn = document.createElement("button");
-        btn.classList.add("custom-btn-answer");
-        btn.textContent = decodeHTML(answerText);
-        
-        btn.addEventListener("click", () => selectAnswer(answerText, question.correct_answer, question.incorrect_answers));
+        btn.className = "custom-btn-answer";
+        const decodedAnswerText = decodeHTML(answerText).trim();
+        btn.textContent = decodedAnswerText;
+        // Store the answer and correct answer on the button
+        btn.dataset.answer = decodedAnswerText;
+        btn.dataset.correctAnswer = decodedCorrect;
+
+        btn.addEventListener("click", (e) => selectAnswer(e.currentTarget));
 
         answersContainer.appendChild(btn);
-        
     });
-  
 }
+  
 function shuffle(array) {
     return [...array].sort(() => Math.random() - 0.5);
 }
@@ -132,42 +132,36 @@ function decodeHTML(str) {
 
 
 /* handling answers from questions and showing correct and incorrect, code helped by mentor Tim*/
-function selectAnswer(answer, correct, incorrect) {
+function selectAnswer(clickedBtn) {
     const buttons = answersContainer.querySelectorAll("button");
+    const correctAnswer = clickedBtn.dataset.correctAnswer;
+    const selectedAnswer = clickedBtn.dataset.answer;
 
+    // disable all buttons
+    buttons.forEach(btn => btn.classList.add("disabled"));
 
-    buttons.forEach(btn => {
-        btn.classList.add("disabled");
-        const btnText = btn.textContent;
-        if (btnText === decodeHTML(correct)) {
-            btn.classList.add("correct");
-        } 
-        if (btnText === decodeHTML(answer) && answer !== correct) {
-            btn.classList.add("incorrect");
-        }
-    
-    });
-
-    
-        /*adding score*/
-    
-        
-        if (answer === correct) {
+    // Check if answer is correct or incorrect
+    if (selectedAnswer === correctAnswer) {
+        // CORRECT - highlight only the clicked button GREEN
+        clickedBtn.classList.add("correct");
         scorePoints++;
         document.getElementById("score").textContent = scorePoints;
-        }
-        setTimeout(() => {
-            currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                displayQuestions();
-            } else {
-                showFinalScore();
-            }
-        }, 1000);
-
+    } else {
+        // INCORRECT - highlight only the clicked button RED
+        clickedBtn.classList.add("incorrect");
     }
-      
-function showFinalScore(){
-   quizScreen.classList.remove("active");
-      endScreen.classList.add("active");
+
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            displayQuestions();
+        } else {
+            quizScreen.classList.remove('active');
+            endScreen.classList.add('active');
+            document.getElementById("final-score").textContent = scorePoints;
+            document.getElementById("max-score").textContent = questions.length;
 }
+        
+    }, 1000);
+}
+

@@ -259,39 +259,26 @@ font-size: 1.2rem;
   transition: 0.3s ease-in-out;
 }
 /* recommended fix for color disapearing on press by chatgpt*/
-.custom-btn-answer:active {
+/* .custom-btn-answer:active {
   transform: scale(0.97);
-  background-color: aliceblue !important;
+  background-color: aliceblue;
   color: inherit;
   box-shadow: none;
   
-}
-/* next question button */
-.custom-btn-next {
-  width: 100%;
-  min-height: 25px;
-  background-color: rgb(233, 183, 123);
-  border: outset;
-  border-radius: 8px;
-  text-align: center;
-  padding: 5 10px;
-  font-weight: 700;
-  letter-spacing: 0.1rem;
-}
-.custom-btn-next:hover {
-  background-color: rgb(190, 143, 84);
-  transition: 0.3s ease-in-out;
-  color: white;
-}
-/* correct and incorrect indicators */
-  .custom-btn-answer.correct {
-  background-color:green;
-  color: white;
+} */
 
+/* correct and incorrect indicators */
+ .custom-btn-answer.correct {
+  background-color: green ;
+  color: white ;
+  border: 3px solid darkgreen ;
 }
- .custom-btn-answer.incorrect {
- background-color: red;
- color: white;
+
+
+.custom-btn-answer.incorrect {
+  background-color: red ;
+  color: white ;
+  border: 3px solid darkred ;
 }
 
 .custom-btn-answer.disabled {
