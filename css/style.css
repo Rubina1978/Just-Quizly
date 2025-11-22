@@ -292,10 +292,13 @@ font-size: 1.2rem;
     border:1px solid aliceblue;
     border-radius: 5px;
     margin-top: 10px;
+    overflow: hidden;
 }
 
 .progress {
-   color: rgb(255, 77, 0);
+  height: 100%;
+   background-color: rgb(255, 77, 0) !important;
+   width: 0%;
   
 }
 
@@ -305,6 +308,7 @@ font-size: 1.2rem;
     font-size: 1.3rem;
     margin: 15px 0;
     font-weight: 600;
+    height: auto;
 } 
 .custom-btn-restart {
     width: 200px;

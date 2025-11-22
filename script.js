@@ -1,34 +1,39 @@
 
 
 
-/* buttons and selects */
+/*DOM elements*/
+
+/*screens*/
+const startScreen = document.getElementById('start-screen');
+const quizScreen = document.getElementById('quiz-screen');
+const endScreen = document.getElementById('end-screen');
+
+/*difficulty*/
 const difficultySelect = document.querySelectorAll('.difficulty'); /*recommended by chatgpt*/
+
+/*topic*/
 const topicsSelect = document.querySelectorAll('.topic-btn'); /*best practice by chatgpt*/
+
 const startBtn = document.getElementById('start-btn');
 const currentQuestionEl = document.getElementById('current-question-text');
 const answersContainer = document.getElementById("answers-container");
-const nextbtn = document.getElementById('custom-btn-next');
-const progress = document.getElementById('progress');
-const endScore = document.getElementById('final-score');
-const scoreMax = document.getElementById('max-score');
+const finalScoreSpan = document.getElementById('final-score');
+const maxScoreSpan = document.getElementById('max-score');
 const message = document.getElementById('message');
+const restartQuizButton = document.getElementById("restart-btn")
+const progressBar = document.getElementById('progress');
 
-const startScreen = document.getElementById('start-screen');
-    const quizScreen = document.getElementById('quiz-screen');
-    const endScreen = document.getElementById('end-screen');
 
 
 let scorePoints = 0;
-let progressBarWidth = 0;
 let currentQuestionIndex = 0;
 
 // function to prepare quiz based on selected difficulty and topics corrected with help of chatgpt
 let questions = []
 let selectedDifficulty = "";
 let selectedTopic = "";
-function prepareQuiz() {
 
-    
+function prepareQuiz() {
 
     // difficulty buttons
     const difficultyButtons = document.querySelectorAll('.difficulty');
@@ -57,7 +62,7 @@ function prepareQuiz() {
 
         startScreen.classList.remove('active');
         quizScreen.classList.add('active');
-        
+
     /*updated to make fetch questions work*/
         questions = await fetchQuestions(selectedDifficulty, selectedTopic);
         console.log("Fetched questions", questions);
@@ -90,11 +95,17 @@ function displayQuestions() {
     const questionEl = document.getElementById("current-question-text");
 
     document.getElementById("current-question-number").textContent = currentQuestionIndex + 1;
-
+    
+    /*progress marking*/
+     const progressMark = (currentQuestionIndex / questions.length) * 100;
+     progress.style.width = progressMark + "%";
+     
+    
+     /*clean questions answers before next question */
     const question = questions[currentQuestionIndex];
     answersContainer.innerHTML = "";
-    questionEl.textContent = decodeHTML(question.question).trim();
 
+    questionEl.textContent = decodeHTML(question.question).trim();
     const decodedCorrect = decodeHTML(question.correct_answer).trim();
 
     let answers = [
@@ -102,8 +113,10 @@ function displayQuestions() {
         question.correct_answer
     ];
 
+    /*shuffle answers part one*/
     answers = shuffle(answers);
 
+    /*creating buttons*/
     answers.forEach(answerText => {
         const btn = document.createElement("button");
         btn.className = "custom-btn-answer";
@@ -118,7 +131,7 @@ function displayQuestions() {
         answersContainer.appendChild(btn);
     });
 }
-  
+  /*shuffle answers part two*/
 function shuffle(array) {
     return [...array].sort(() => Math.random() - 0.5);
 }
@@ -131,7 +144,7 @@ function decodeHTML(str) {
 }
 
 
-/* handling answers from questions and showing correct and incorrect, code helped by mentor Tim*/
+/* handling answers from questions and showing correct and incorrect, code helped by mentor Tim later rewritten with copilot to fix buttons issues*/
 function selectAnswer(clickedBtn) {
     const buttons = answersContainer.querySelectorAll("button");
     const correctAnswer = clickedBtn.dataset.correctAnswer;
@@ -153,6 +166,7 @@ function selectAnswer(clickedBtn) {
 
     setTimeout(() => {
         currentQuestionIndex++;
+
         if (currentQuestionIndex < questions.length) {
             displayQuestions();
         } else {
