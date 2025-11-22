@@ -170,12 +170,33 @@ function selectAnswer(clickedBtn) {
         if (currentQuestionIndex < questions.length) {
             displayQuestions();
         } else {
-            quizScreen.classList.remove('active');
-            endScreen.classList.add('active');
-            document.getElementById("final-score").textContent = scorePoints;
-            document.getElementById("max-score").textContent = questions.length;
+            showResults()
+
 }
         
     }, 1000);
 }
 
+function showResults() {
+            quizScreen.classList.remove('active');
+            endScreen.classList.add('active');
+           
+            finalScoreSpan.textContent = scorePoints;
+            maxScoreSpan.textContent = questions.length;
+            const percentage = (scorePoints / questions.length) * 100;
+            if (percentage === 100) {
+               message.textContent = "Congratulation you smashed it!";
+            } else if (percentage >= 80) {
+                message.textContent = "Congratulation almost perfect!";
+            } else if (percentage >= 60) {
+                message.textContent = "Congratulation that is a great result!";
+            } else if (percentage >= 50) {
+                message.textContent = " Hey not bad 50/50!";
+            } else if (percentage >= 30) {
+                message.textContent = " Great effort!";
+            } else if  (percentage >= 10) {
+                message.textContent = "Not too bad, keep learning";
+
+            } else { message.textContent = "Hey don't worry you can always try again :)!";
+            }
+}
