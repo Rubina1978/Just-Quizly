@@ -40,7 +40,17 @@ function prepareQuiz() {
     difficultyButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             selectedDifficulty = btn.dataset.difficulty;
-            console.log('Selected difficulty:', selectedDifficulty);
+            /* adding disabled classes to rest of the options when option selected*/
+            difficultyButtons.forEach(b => {
+                if (b === btn) {
+                    b.classList.add("selected");
+                    b.disabled = false;
+                } else {
+                    b.classList.remove("selected");
+                    b.classList.add("disabled");
+                    b.disabled = true;
+                }
+            });
         });
     });
 
@@ -49,7 +59,18 @@ function prepareQuiz() {
     topicButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             selectedTopic = btn.dataset.category;
-            console.log('Selected topic:', selectedTopic);
+            /* adding disabled classes to rest of the options when option selected*/
+            topicButtons.forEach(b => {
+                if (b === btn) {
+                    b.classList.add("selected");
+                    b.disabled = false;
+                } else {
+                    b.classList.remove("selected");
+                    b.classList.add("disabled");
+                    b.disabled = true;
+
+                }
+            });
         });
     });
 

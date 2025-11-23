@@ -281,7 +281,8 @@ font-size: 1.2rem;
   border: 3px solid darkred ;
 }
 
-.custom-btn-answer.disabled {
+.custom-btn-answer.disabled, .custom-btn-topic1.disabled
+, .custom-btn-topic2.disabled, .custom-btn-topic3.disabled {
   pointer-events: none;
   opacity: 0.6;
 }
@@ -335,4 +336,3 @@ font-size: 1.2rem;
   }
 }
     
-
