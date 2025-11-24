@@ -19,10 +19,12 @@ const currentQuestionEl = document.getElementById('current-question-text');
 const answersContainer = document.getElementById("answers-container");
 const finalScoreSpan = document.getElementById('final-score');
 const maxScoreSpan = document.getElementById('max-score');
-const message = document.getElementById('message');
+
 const restartQuizButton = document.getElementById("restart-btn")
 const progressBar = document.getElementById('progress');
 
+const score = document.getElementById('score');
+const message = document.getElementById('message');
 
 
 let scorePoints = 0;
@@ -117,40 +119,39 @@ function displayQuestions() {
 
     document.getElementById("current-question-number").textContent = currentQuestionIndex + 1;
     
-    /*progress marking*/
+    /* added progress marking*/
      const progressMark = (currentQuestionIndex / questions.length) * 100;
      progress.style.width = progressMark + "%";
      
     
      /*clear questions answers before next question */
     const question = questions[currentQuestionIndex];
-    answersContainer.innerHTML = "";
+    answersContainer.innerHTML = ""; // clear previous answers
 
-    questionEl.textContent = decodeHTML(question.question).trim();
-    const decodedCorrect = decodeHTML(question.correct_answer).trim();
+    questionEl.textContent = decodeHTML(question.question); 
 
-    let answers = [
-        ...question.incorrect_answers,
-        question.correct_answer
-    ];
+    const decodedCorrect = decodeHTML(question.correct_answer);
 
-    /*shuffle answers part one*/
-    answers = shuffle(answers);
+    let answers = [...question.incorrect_answers, question.correct_answer];
 
-    /*creating buttons*/
-    answers.forEach(answerText => {
-        const btn = document.createElement("button");
-        btn.className = "custom-btn-answer";
-        const decodedAnswerText = decodeHTML(answerText).trim();
-        btn.textContent = decodedAnswerText;
-        // Store the answer and correct answer on the button
-        btn.dataset.answer = decodedAnswerText;
-        btn.dataset.correctAnswer = decodedCorrect;
+/* shuffle answers*/
+answers = shuffle(answers);
 
-        btn.addEventListener("click", (e) => selectAnswer(e.currentTarget));
 
-        answersContainer.appendChild(btn);
-    });
+answers.forEach(answerText => {
+    const btn = document.createElement("button");
+    btn.className = "custom-btn-answer";
+    const decodedAnswerText = decodeHTML(answerText);
+    btn.textContent = decodedAnswerText;
+
+    // store answer info for your selectAnswer function
+    btn.dataset.answer = decodedAnswerText;
+    btn.dataset.correctAnswer = decodedCorrect;
+
+    btn.addEventListener("click", (e) => selectAnswer(e.currentTarget));
+    answersContainer.appendChild(btn);
+});
+
 }
   /*shuffle answers part two*/
 function shuffle(array) {
@@ -165,7 +166,7 @@ function decodeHTML(str) {
 }
 
 
-/* handling answers from questions and showing correct and incorrect, code helped by mentor Tim later rewritten with github copilot to fix buttons issues*/
+/* handling answers from questions and showing correct and incorrect, code helped by mentor then adjusted to fix an error not displaying answer buttons*/
 function selectAnswer(clickedBtn) {
     const buttons = answersContainer.querySelectorAll("button");
     const correctAnswer = clickedBtn.dataset.correctAnswer;
@@ -174,16 +175,21 @@ function selectAnswer(clickedBtn) {
     // disable all buttons
     buttons.forEach(btn => btn.classList.add("disabled"));
 
-    // Check if answer is correct or incorrect
-    if (selectedAnswer === correctAnswer) {
-        // CORRECT - highlight only the clicked button GREEN
-        clickedBtn.classList.add("correct");
+    // highlight the correct answer
+    buttons.forEach(btn => {
+        if (btn.dataset.answer === correctAnswer) {
+            btn.classList.add("correct");
+        }
+    });
+
+    // highlight the clicked wrong answer
+    if (selectedAnswer !== correctAnswer) {
+        clickedBtn.classList.add("incorrect");
+    } else {
         scorePoints++;
         document.getElementById("score").textContent = scorePoints;
-    } else {
-        // INCORRECT - highlight only the clicked button RED
-        clickedBtn.classList.add("incorrect");
     }
+
 
     setTimeout(() => {
         currentQuestionIndex++;
@@ -202,8 +208,7 @@ function showResults() {
     document.getElementById("restart-btn").addEventListener('click', () => {
     const diffBtns = document.querySelectorAll('.difficulty');
     const topBtns = document.querySelectorAll('.topic-btn');
-    console.log('diffBtns:', diffBtns);
-    console.log('topBtns:', topBtns);
+    
 });
             quizScreen.classList.remove('active');
             endScreen.classList.add('active');
@@ -250,3 +255,8 @@ document.getElementById("restart-btn").addEventListener('click', () => {
     endScreen.classList.remove("active");
     startScreen.classList.add("active");
 });
+
+
+
+
+
