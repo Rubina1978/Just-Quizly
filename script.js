@@ -9,10 +9,10 @@ const quizScreen = document.getElementById('quiz-screen');
 const endScreen = document.getElementById('end-screen');
 
 /*difficulty*/
-const difficultySelect = document.querySelectorAll('.difficulty'); /*recommended by chatgpt*/
+const difficultyButtons = document.querySelectorAll('.difficulty'); /*recommended by chatgpt*/
 
 /*topic*/
-const topicsSelect = document.querySelectorAll('.topic-btn'); /*best practice by chatgpt*/
+const topicButtons = document.querySelectorAll('.topic-btn'); /*best practice by chatgpt*/
 
 const startBtn = document.getElementById('start-btn');
 const currentQuestionEl = document.getElementById('current-question-text');
@@ -36,7 +36,7 @@ let selectedTopic = "";
 function prepareQuiz() {
 
     // difficulty buttons
-    const difficultyButtons = document.querySelectorAll('.difficulty');
+    
     difficultyButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             selectedDifficulty = btn.dataset.difficulty;
@@ -122,7 +122,7 @@ function displayQuestions() {
      progress.style.width = progressMark + "%";
      
     
-     /*clean questions answers before next question */
+     /*clear questions answers before next question */
     const question = questions[currentQuestionIndex];
     answersContainer.innerHTML = "";
 
@@ -165,7 +165,7 @@ function decodeHTML(str) {
 }
 
 
-/* handling answers from questions and showing correct and incorrect, code helped by mentor Tim later rewritten with copilot to fix buttons issues*/
+/* handling answers from questions and showing correct and incorrect, code helped by mentor Tim later rewritten with github copilot to fix buttons issues*/
 function selectAnswer(clickedBtn) {
     const buttons = answersContainer.querySelectorAll("button");
     const correctAnswer = clickedBtn.dataset.correctAnswer;
@@ -199,6 +199,12 @@ function selectAnswer(clickedBtn) {
 }
 
 function showResults() {
+    document.getElementById("restart-btn").addEventListener('click', () => {
+    const diffBtns = document.querySelectorAll('.difficulty');
+    const topBtns = document.querySelectorAll('.topic-btn');
+    console.log('diffBtns:', diffBtns);
+    console.log('topBtns:', topBtns);
+});
             quizScreen.classList.remove('active');
             endScreen.classList.add('active');
            
@@ -220,4 +226,27 @@ function showResults() {
 
             } else { message.textContent = "Hey don't worry you can always try again :)!";
             }
+    
+          
 }
+
+document.getElementById("restart-btn").addEventListener('click', () => {
+    scorePoints = 0;
+    currentQuestionIndex = 0;
+    document.getElementById("score").textContent = scorePoints;
+   
+    difficultyButtons.forEach(btn => {
+        btn.classList.remove("selected");
+         btn.classList.remove("disabled");
+         btn.disabled = false;
+    })
+    topicButtons.forEach(btn => {
+        btn.classList.remove("selected");
+        btn.classList.remove("disabled");
+        btn.disabled = false;
+    })
+    selectedDifficulty = "";
+    selectedTopic = "";
+    endScreen.classList.remove("active");
+    startScreen.classList.add("active");
+});
