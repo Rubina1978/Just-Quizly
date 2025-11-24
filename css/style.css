@@ -282,9 +282,9 @@ font-size: 1.2rem;
 }
 
 .custom-btn-answer.disabled, .custom-btn-topic1.disabled
-, .custom-btn-topic2.disabled, .custom-btn-topic3.disabled {
+, .custom-btn-topic2.disabled, .custom-btn-topic3.disabled, .custom-btn-easy.disabled, .custom-btn-medium.disabled, .custom-btn-hard.disabled   {
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 /* progress */
 .progress-bar {
