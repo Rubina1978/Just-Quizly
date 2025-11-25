@@ -26,6 +26,9 @@ const progressBar = document.getElementById('progress');
 const score = document.getElementById('score');
 const message = document.getElementById('message');
 
+ const correctAnswerSound = new Audio('correct.mp3');
+ const wrongAnswerSound = new Audio('wronganswer.mp3');
+
 
 let scorePoints = 0;
 let currentQuestionIndex = 0;
@@ -172,24 +175,38 @@ function selectAnswer(clickedBtn) {
     const correctAnswer = clickedBtn.dataset.correctAnswer;
     const selectedAnswer = clickedBtn.dataset.answer;
 
+   
+    
+    
+
     // disable all buttons
     buttons.forEach(btn => btn.classList.add("disabled"));
 
     // highlight the correct answer
-    buttons.forEach(btn => {
-        if (btn.dataset.answer === correctAnswer) {
-            btn.classList.add("correct");
-        }
-    });
-
-    // highlight the clicked wrong answer
-    if (selectedAnswer !== correctAnswer) {
-        clickedBtn.classList.add("incorrect");
-    } else {
-        scorePoints++;
+    // buttons.forEach(btn => {
+        if (selectedAnswer === correctAnswer) {
+            clickedBtn.classList.add("correct");
+            correctAnswerSound.play();
+            scorePoints++;
         document.getElementById("score").textContent = scorePoints;
-    }
+        
+    // });
 
+    // // highlight the clicked wrong answer
+    // if (selectedAnswer !== correctAnswer) {
+    //    
+    } else {
+        // User clicked wrong answer
+        clickedBtn.classList.add("incorrect");
+        wrongAnswerSound.play(); // Play sound ONLY if wrong button clicked
+
+        // Highlight the correct answer, but do NOT play any sound
+        buttons.forEach(btn => {
+            if (btn.dataset.answer === correctAnswer) {
+                btn.classList.add("correct");
+            }
+        });
+    }
 
     setTimeout(() => {
         currentQuestionIndex++;
@@ -263,20 +280,20 @@ function endStreetConfetti (){
 var end = Date.now() + (15 * 1000);
 
 // go Buckeyes!
-var colors = ['#f72419f8', ' #FFD700'];
+var colors = ['#f72419f8', ' #FFD700', ' #1A021CFF)'];
 
 (function frame() {
   confetti({
-    particleCount: 2,
+    particleCount: 3,
     angle: 60,
-    spread: 55,
+    spread: 65,
     origin: { x: 0 },
     colors: colors
   });
   confetti({
-    particleCount: 2,
+    particleCount: 3,
     angle: 120,
-    spread: 55,
+    spread: 65,
     origin: { x: 1 },
     colors: colors
   });
