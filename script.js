@@ -32,11 +32,11 @@ const message = document.getElementById('message');
 
 let scorePoints = 0;
 let currentQuestionIndex = 0;
-
 // function to prepare quiz based on selected difficulty and topics corrected with help of chatgpt
 let questions = []
 let selectedDifficulty = "";
 let selectedTopic = "";
+let stopConfetti = false;
 
 function prepareQuiz() {
 
@@ -175,10 +175,6 @@ function selectAnswer(clickedBtn) {
     const correctAnswer = clickedBtn.dataset.correctAnswer;
     const selectedAnswer = clickedBtn.dataset.answer;
 
-   
-    
-    
-
     // disable all buttons
     buttons.forEach(btn => btn.classList.add("disabled"));
 
@@ -189,12 +185,7 @@ function selectAnswer(clickedBtn) {
             correctAnswerSound.play();
             scorePoints++;
         document.getElementById("score").textContent = scorePoints;
-        
-    // });
-
-    // // highlight the clicked wrong answer
-    // if (selectedAnswer !== correctAnswer) {
-    //    
+           
     } else {
         // User clicked wrong answer
         clickedBtn.classList.add("incorrect");
@@ -255,6 +246,8 @@ function showResults() {
 
 
 document.getElementById("restart-btn").addEventListener('click', () => {
+    stopConfetti = true;
+    if (confetti.reset) confetti.reset();
     scorePoints = 0;
     currentQuestionIndex = 0;
     document.getElementById("score").textContent = scorePoints;
@@ -277,12 +270,13 @@ document.getElementById("restart-btn").addEventListener('click', () => {
 
 /*code from confetti https://www.kirilv.com/canvas-confetti/ */
 function endStreetConfetti (){
-var end = Date.now() + (15 * 1000);
+var end = Date.now() + (5 * 1000);
 
 // go Buckeyes!
 var colors = ['#f72419f8', ' #FFD700', ' #1A021CFF)'];
 
 (function frame() {
+    if (stopConfetti) return;
   confetti({
     particleCount: 3,
     angle: 60,
