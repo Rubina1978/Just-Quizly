@@ -38,6 +38,17 @@ let selectedDifficulty = "";
 let selectedTopic = "";
 let stopConfetti = false;
 
+const muteBtn = document.getElementById("mute-btn");
+const muteIcon = document.getElementById("mute-icon");
+let soundMuted = false;
+muteBtn.addEventListener('click', () => {
+soundMuted = !soundMuted;
+
+muteIcon.src = soundMuted ? "mute.png" : "unmute.png";
+
+
+});
+
 function prepareQuiz() {
 
     // difficulty buttons
@@ -182,14 +193,14 @@ function selectAnswer(clickedBtn) {
     // buttons.forEach(btn => {
         if (selectedAnswer === correctAnswer) {
             clickedBtn.classList.add("correct");
-            correctAnswerSound.play();
+           if (!soundMuted) correctAnswerSound.play();
             scorePoints++;
         document.getElementById("score").textContent = scorePoints;
            
     } else {
         // User clicked wrong answer
         clickedBtn.classList.add("incorrect");
-        wrongAnswerSound.play(); // Play sound ONLY if wrong button clicked
+        if (!soundMuted) wrongAnswerSound.play(); // Play sound ONLY if wrong button clicked
 
         // Highlight the correct answer, but do NOT play any sound
         buttons.forEach(btn => {
@@ -251,6 +262,8 @@ document.getElementById("restart-btn").addEventListener('click', () => {
     scorePoints = 0;
     currentQuestionIndex = 0;
     document.getElementById("score").textContent = scorePoints;
+    soundMuted = false;
+    muteIcon.src = "unmute.png";
    
     difficultyButtons.forEach(btn => {
         btn.classList.remove("selected");

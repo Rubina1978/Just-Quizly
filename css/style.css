@@ -330,7 +330,14 @@ font-size: 1.2rem;
   background-color: midnightblue!important; /*override default active style*/
 }
 
-
+.mute {
+  position: fixed;
+  top: 10vw;
+  left: 5vw;
+  min-width: 5vw;
+  padding: 1vw;
+  background: none;
+}
 @media (min-width: 576px) {
   .answers-container {
     grid-template-columns: repeat(2, 1fr);
