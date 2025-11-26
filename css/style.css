@@ -7,7 +7,9 @@
     box-sizing: border-box;
 }
 body {
-  min-height: 100vh;
+  min-height: 90vh;
+  width: 100%;
+  height: auto;
   display: flex;
   justify-content: flex-start; /* container stays top-centered */
   align-items: center;
@@ -17,16 +19,23 @@ body {
   background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);; 
 }
 
+h1 {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
 h5 {
   letter-spacing: 0.1rem;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 700;
 }
-p {
-  font-size: 1.1rem;
+p .lead{
+  font-size: 0.9rem;
   letter-spacing: 0.1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
+
+
 /* All screens hidden by default */
 .screen {
   display: none;
@@ -47,6 +56,7 @@ p {
 .container {
   max-width: 700px;
   width: 90%;
+  height: auto;
   margin: 0 auto;
   background-color: #F7E7CE;
   border-radius: 10px;
@@ -58,10 +68,8 @@ p {
     font-weight: 600;
 }
 
-
-
 #start-screen p {
-    font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 /* buttons */
 .custom-btn-easy{
@@ -172,12 +180,12 @@ p {
 
 /* Buttons uniform size */
 #difficulty, #topics {
-  width: 75%;
+  width: 80%;
   text-transform: uppercase;
 }
 
 .topic-btn, .difficulty{
-font-size: 1.2rem;
+font-size: 0.9rem;
   width: 75%;
   padding: 5px 10px;
   border: none;
@@ -190,21 +198,26 @@ font-size: 1.2rem;
 
 /* start button */
 
-.custom-btn {
+.start-btn, .custom-btn-restart{
     width: 200px;
-    font-size: 1.2rem;
     text-transform: uppercase;
     background-color: midnightblue;
     transition: transform 0.1s, background-color 0.1s;
+    border-radius: 8px;
+    padding: 4px 10px;
+    justify-content: center;
+    align-items: center;
+   
+    
     
 }
-.custom-btn:hover {
+.custom-btn:hover, .custom-btn-restart:hover {
   background-color: rgb(2, 2, 18);
   border: none;
   
 }
 
-.custom-btn:active{
+.custom-btn:active, .custom-btn-restart:active {
   transform: scale(0.97);
   background-color: midnightblue!important; /*override default active style*/
 }
@@ -224,10 +237,11 @@ font-size: 1.2rem;
 /* questions */
 .question-text {
  color: #333;
- font-size: 1.5rem;
+ font-size: 1.2rem;
  margin-bottom: 1rem;
- line-height: 2rem;
  margin-top: 20px;
+ line-height: 1.6rem;
+ font-weight: 700;
 }
 
 /* answers box */
@@ -305,11 +319,10 @@ font-size: 1.2rem;
     height: auto;
 } 
 .custom-btn-restart {
-    width: 200px;
-    font-size: 1.2rem;
+    /* width: 200px;
     text-transform: uppercase;
     background-color: midnightblue;
-    transition: transform 0.1s, background-color 0.1s;
+    transition: transform 0.1s, background-color 0.1s; */
     
 }
 .custom-btn-restart:hover {
@@ -331,9 +344,28 @@ font-size: 1.2rem;
   padding: 1vw;
   background: none;
 }
-@media (min-width: 576px) {
+@media (min-width: 576.1px) {
   .answers-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h5 {
+    font-size: 1.3rem;
+  }
+
+  #start-screen p {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .topic-btn, .difficulty {
+    font-size: 1.2rem;
+  }
+  
+  .question-text {
+    font-size: 1.4rem;
   }
 }
     
