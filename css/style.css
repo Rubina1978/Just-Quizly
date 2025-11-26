@@ -318,13 +318,7 @@ font-size: 0.9rem;
     font-weight: 600;
     height: auto;
 } 
-.custom-btn-restart {
-    /* width: 200px;
-    text-transform: uppercase;
-    background-color: midnightblue;
-    transition: transform 0.1s, background-color 0.1s; */
-    
-}
+
 .custom-btn-restart:hover {
   background-color: rgb(2, 2, 18);
   border: none;
@@ -336,14 +330,16 @@ font-size: 0.9rem;
   background-color: midnightblue!important; /*override default active style*/
 }
 
-.mute {
+#mute-btn {
   position: fixed;
   top: 10vw;
   left: 5vw;
   min-width: 5vw;
   padding: 1vw;
   background: none;
+  border: unset;
 }
+
 @media (min-width: 576.1px) {
   .answers-container {
     grid-template-columns: repeat(2, 1fr);

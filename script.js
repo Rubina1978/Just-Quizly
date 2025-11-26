@@ -47,7 +47,7 @@ let stopConfetti = false;
 /*muted/unmuted operators*/
 const muteBtn = document.getElementById("mute-btn");
 const muteIcon = document.getElementById("mute-icon");
-let soundMuted = false;
+let soundMuted = true;
 muteBtn.addEventListener('click', () => {
 soundMuted = !soundMuted;
 
@@ -274,8 +274,10 @@ document.getElementById("restart-btn").addEventListener('click', () => {
     scorePoints = 0;
     currentQuestionIndex = 0;
     document.getElementById("score").textContent = scorePoints;
-    soundMuted = false;
-    muteIcon.src = "unmute.png";
+    soundMuted = true;
+    muteIcon.src = "mute.png";
+    endQuizSound.pause();
+    endQuizSound.currentTime = 0;
 
    
     difficultyButtons.forEach(btn => {
