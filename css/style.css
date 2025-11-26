@@ -258,14 +258,7 @@ font-size: 1.2rem;
   background-color:#e2ceaf;
   transition: 0.3s ease-in-out;
 }
-/* recommended fix for color disapearing on press by chatgpt*/
-/* .custom-btn-answer:active {
-  transform: scale(0.97);
-  background-color: aliceblue;
-  color: inherit;
-  box-shadow: none;
-  
-} */
+
 
 /* correct and incorrect indicators */
  .custom-btn-answer.correct {

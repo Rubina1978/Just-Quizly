@@ -28,6 +28,8 @@ const message = document.getElementById('message');
 
  const correctAnswerSound = new Audio('correct.mp3');
  const wrongAnswerSound = new Audio('wronganswer.mp3');
+ const selectionSound = new Audio('selectionsound.mp3');
+ const endQuizSound = new Audio('endquiz.mp3')
 
 
 let scorePoints = 0;
@@ -61,6 +63,8 @@ function prepareQuiz() {
                 if (b === btn) {
                     b.classList.add("selected");
                     b.disabled = false;
+                  if (!soundMuted) selectionSound.play();
+
                 } else {
                     b.classList.remove("selected");
                     b.classList.add("disabled");
@@ -80,6 +84,8 @@ function prepareQuiz() {
                 if (b === btn) {
                     b.classList.add("selected");
                     b.disabled = false;
+                  if (!soundMuted) selectionSound.play();
+
                 } else {
                     b.classList.remove("selected");
                     b.classList.add("disabled");
@@ -231,7 +237,7 @@ function showResults() {
 });
             quizScreen.classList.remove('active');
             endScreen.classList.add('active');
-           
+            if (!soundMuted) endQuizSound.play();
             finalScoreSpan.textContent = scorePoints;
             maxScoreSpan.textContent = questions.length;
             const percentage = (scorePoints / questions.length) * 100;
@@ -264,6 +270,7 @@ document.getElementById("restart-btn").addEventListener('click', () => {
     document.getElementById("score").textContent = scorePoints;
     soundMuted = false;
     muteIcon.src = "unmute.png";
+
    
     difficultyButtons.forEach(btn => {
         btn.classList.remove("selected");
@@ -283,7 +290,7 @@ document.getElementById("restart-btn").addEventListener('click', () => {
 
 /*code from confetti https://www.kirilv.com/canvas-confetti/ */
 function endStreetConfetti (){
-var end = Date.now() + (5 * 1000);
+var end = Date.now() + (10 * 1000);
 
 // go Buckeyes!
 var colors = ['#f72419f8', ' #FFD700', ' #1A021CFF)'];
