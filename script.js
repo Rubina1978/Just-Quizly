@@ -14,6 +14,7 @@ const difficultyButtons = document.querySelectorAll('.difficulty'); /*recommende
 /*topic*/
 const topicButtons = document.querySelectorAll('.topic-btn'); /*best practice by chatgpt*/
 
+/* quiz features*/
 const startBtn = document.getElementById('start-btn');
 const currentQuestionEl = document.getElementById('current-question-text');
 const answersContainer = document.getElementById("answers-container");
@@ -23,23 +24,27 @@ const maxScoreSpan = document.getElementById('max-score');
 const restartQuizButton = document.getElementById("restart-btn")
 const progressBar = document.getElementById('progress');
 
+/*score and message features*/
 const score = document.getElementById('score');
 const message = document.getElementById('message');
 
+/*sounds*/
  const correctAnswerSound = new Audio('correct.mp3');
  const wrongAnswerSound = new Audio('wronganswer.mp3');
  const selectionSound = new Audio('selectionsound.mp3');
  const endQuizSound = new Audio('endquiz.mp3')
 
-
+/*other variables*/
 let scorePoints = 0;
 let currentQuestionIndex = 0;
+
 // function to prepare quiz based on selected difficulty and topics corrected with help of chatgpt
 let questions = []
 let selectedDifficulty = "";
 let selectedTopic = "";
 let stopConfetti = false;
 
+/*muted/unmuted operators*/
 const muteBtn = document.getElementById("mute-btn");
 const muteIcon = document.getElementById("mute-icon");
 let soundMuted = false;
@@ -51,6 +56,7 @@ muteIcon.src = soundMuted ? "mute.png" : "unmute.png";
 
 });
 
+/* preparation for the quiz - difficulty / topic */
 function prepareQuiz() {
 
     // difficulty buttons
@@ -115,7 +121,7 @@ function prepareQuiz() {
 
 prepareQuiz();
 
-/* get questions, code corrected with chatgpt*/
+/* get questions via API, code corrected with chatgpt*/
 async function fetchQuestions(difficulty, topic) {
     const apiUrl = `https://opentdb.com/api.php?amount=10&category=${topic}&difficulty=${difficulty}&type=multiple`;
 
@@ -127,7 +133,6 @@ async function fetchQuestions(difficulty, topic) {
     const data = await response.json();
     return data.results;
     } catch (error) {
-        console.log(error);
         return [];
     }  
 }
@@ -215,7 +220,7 @@ function selectAnswer(clickedBtn) {
             }
         });
     }
-
+    /*timer check every second*/
     setTimeout(() => {
         currentQuestionIndex++;
 
@@ -226,9 +231,9 @@ function selectAnswer(clickedBtn) {
 
 }
         
-    }, 1000);
+    }, 1000); /*miliseconds*/
 }
-
+/* results, messages shown on end screen*/
 function showResults() {
     document.getElementById("restart-btn").addEventListener('click', () => {
     const diffBtns = document.querySelectorAll('.difficulty');
@@ -237,6 +242,7 @@ function showResults() {
 });
             quizScreen.classList.remove('active');
             endScreen.classList.add('active');
+
             if (!soundMuted) endQuizSound.play();
             finalScoreSpan.textContent = scorePoints;
             maxScoreSpan.textContent = questions.length;
@@ -261,7 +267,7 @@ function showResults() {
 }
 
 
-
+/* the restart button and going back to start screen*/
 document.getElementById("restart-btn").addEventListener('click', () => {
     stopConfetti = true;
     if (confetti.reset) confetti.reset();
