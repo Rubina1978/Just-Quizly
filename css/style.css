@@ -7,7 +7,6 @@
     box-sizing: border-box;
 }
 body {
-  min-height: 80vh;
   width: 100%;
   height: auto;
   display: flex;
@@ -55,7 +54,7 @@ p .lead{
 /* Container styling */
 .container {
   max-width: 700px;
-  width: 90%;
+  width: 80%;
   height: auto;
   margin: 0 auto;
   background-color: #F7E7CE;
@@ -108,7 +107,7 @@ p .lead{
   color: rgb(31, 3, 3);
   border: none;
   transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
-  box-shadow: none; /* remove Bootstrap shadow */
+  box-shadow: none;
 }
 
 /* Hover and focus */
@@ -126,11 +125,11 @@ p .lead{
 }
 /* music */
 .topic-btn-music{
-  background-color: #7dd6ef;
+  background-color: #05d6d9;
   color: rgb(33, 7, 99) !important;
   border: none;
   transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
-  box-shadow: none; /* remove Bootstrap shadow */
+  box-shadow: none; 
   
 }
 
@@ -240,7 +239,7 @@ font-size: 0.9rem;
  font-size: 1.2rem;
  margin-bottom: 1rem;
  margin-top: 20px;
- line-height: 1.6rem;
+ line-height: 1.8rem;
  font-weight: 700;
 }
 
@@ -369,7 +368,7 @@ font-size: 0.9rem;
     font-size: 0.9rem;
   }
 .logo-img {
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
   width:0.9rem;
 }
 .logo-img:hover {
@@ -378,8 +377,29 @@ font-size: 0.9rem;
 
 nav {
   background-color: midnightblue;
-  padding:0;
+  padding:1rem;
 }
+
+footer {
+  background-color: midnightblue;
+  
+}
+
+footer p {
+  font-size: 1.2rem;
+  color: #05d6d9;
+}
+
+footer p:hover {
+  color:#e155ca;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media (min-width: 576.1px) {
   .answers-container {
     grid-template-columns: repeat(2, 1fr);
@@ -414,5 +434,16 @@ nav {
   .logo-img {
     width: 28px;
   }
+ 
+  .footer-info {
+    flex-direction: row;           /* horizontal */
+    justify-content: center;       /* centered */
+    gap: 2rem;                     /* space between text and icons */
+  }
+  .socials a, .footer-info p {
+  margin: 0 6px;
+  font-size: 1.3rem;
+}
+
 }
     
