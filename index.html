@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Just Quizly</title>
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <!-- favicon -->
@@ -14,12 +14,13 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="d-flex justify-content-center align-items-center min-vh-100">
+
+<body class="d-flex d-flex flex-column min-vh-100 pt-2 pb-2">
   <nav class="navbar bg-body-bg fixed-top">
   <div class="container-fluid d-flex justify-content-between align-items-center">
 
     <!-- Brand -->
-    <a class="navbar-brand"  href="#" ><img src="assets/brandlogo.png" class="logo-img" width="30" alt="">Just Quizly</a>
+    <a class="navbar-brand"  href="index.html" ><img src="assets/brandlogo.png" class="logo-img" width="30" alt="">Just Quizly</a>
 
     <!-- right site of menu -->
     <div class="d-flex align-items-center">
@@ -45,32 +46,32 @@
     <img src = "mute.png" class="mute-btn" id="mute-icon" width="40" alt="mute/unmute buttons">
   </button> -->
 
- <div id="start-screen" class="container text-center screen active ">
-    <h1 class="mb-2">Feeling Quizly?</h1>
-    <p class="lead">Test your brain, learn something new, and have fun while at it!</p>
+ <div id="start-screen" class="start-screen container text-center screen active">
+    <h1>Feeling Quizly?</h1>
+    <p>Test your brain, learn something new, and have fun while at it!</p>
     <p>Pick your topic and difficulty, then let's get Quizly!</p>
 
     <!-- Difficulty -->
-    <h5 class="fw-bold mt-3 mb-3">Difficulty</h5>
+    <h2>Difficulty</h2>
     <div id="difficulty" class="d-flex flex-column align-items-center gap-2">
-      <button class="btn btn-success difficulty custom-btn-easy w-75" data-difficulty="easy">Easy</button>
-      <button class="btn btn-warning difficulty custom-btn-medium w-75" data-difficulty="medium">Medium</button>
-      <button class="btn btn-danger difficulty custom-btn-hard w-75" data-difficulty="hard">Hard</button>
+      <button class="btn btn-success difficulty custom-btn-easy w-80" data-difficulty="easy">Easy</button>
+      <button class="btn btn-warning difficulty custom-btn-medium w-80" data-difficulty="medium">Medium</button>
+      <button class="btn btn-danger difficulty custom-btn-hard w-80" data-difficulty="hard">Hard</button>
     </div>
 
     <!-- Topics -->
-    <h5 class="fw-bold mt-4 mb-3">Topic</h5>
-    <div id="topics" class="d-flex flex-column align-items-center gap-2 mb-4">
-        <button class="topic-btn topic-btn-geography w-75 custom-btn-topic1" data-category="22">Geography</button>
-        <button class="topic-btn topic-btn-music w-75 custom-btn-topic2" data-category="12">Music</button>
-        <button class="topic-btn topic-btn-general w-75 custom-btn-topic3" data-category="9">General Knowledge</button>
+    <h2 class="mt-3">Topic</h2>
+    <div id="topics" class="d-flex flex-column align-items-center gap-2">
+        <button type="button" class="topic-btn topic-btn-geography w-80 custom-btn-topic1" data-category="22">Geography</button>
+        <button type="button" class="topic-btn topic-btn-music w-80 custom-btn-topic2" data-category="12">Music</button>
+        <button type="button" class="topic-btn topic-btn-general w-80 custom-btn-topic3" data-category="9">General</button>
     </div>
 
-    <button class="btn custom-btn-medium btn-primary start-btn custom-btn mt-2 mb-2" id="start-btn">Start Quiz</button>
+    <button type= "button"class="btn btn-primary start-btn custom-btn mt-4 btn-lg" id="start-btn">Start Quiz</button>
 </div>
 
    <!-- Quiz Page  resource Codesistency build 15 projects html css java script -->
-  <div id="quiz-screen" class="container screen text-center">
+  <div id="quiz-screen" class="container-quiz screen text-center">
     
     <p id="current-question-text" class="question-text">Questions appear here</p>
     <div class="quiz-info">
@@ -96,12 +97,12 @@
 
 
   <!-- End Page -->
-  <div id="end-screen" class="screen container text-center ">
+  <div id="end-screen" class="screen container-end text-center ">
     <h1 class="mt-3">And you are done!</h1>
     <div class="result-info"></div>
     <p class="score">you scored <span id="final-score">2</span> out of <span id="max-score">5</span></p>
     <p class="message" id="message">Well done!</p>
-    <button class="btn btn-primary custom-btn-restart mt-3 mb-3" id="restart-btn">Restart Quiz</button>
+    <button class="btn btn-primary custom-btn-restart btn-lg mt-3 mb-3" id="restart-btn">Restart Quiz</button>
   </div>
    
 

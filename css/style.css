@@ -8,30 +8,33 @@
 }
 body {
   width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: flex-start; /* container stays top-centered */
+ 
+   /* container stays top-centered */
+  justify-content: center;
   align-items: center;
-  padding-top: 20px; /* breathing room */
   font-family: "Josefin Sans", sans-serif;
   background-color: #f907fc;
-  background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);; 
+  background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+  
+  
 }
 
 h1 {
-  margin-top: 20px;
-  font-weight: 600;
-  font-size: 1.4rem;
-}
-h5 {
-  letter-spacing: 0.1rem;
-  font-size: 1.2rem;
+  margin-top: 5px;
   font-weight: 700;
+  font-size: 1.3rem;
 }
-p .lead{
+h2 {
+  
+  font-weight: 700;
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
-  font-weight: 700;
+ 
+}
+.start-screen p {
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
 }
 
 
@@ -52,20 +55,33 @@ p .lead{
 }
 
 /* Container styling */
+
+
 .container {
   max-width: 700px;
   width: 80%;
-  height: auto;
-  margin: 0 auto;
+  margin-bottom: 20px;
   background-color: #F7E7CE;
   border-radius: 10px;
   box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
-  padding: 10px;
+  padding: 20px;
+  /* height: auto; */
+
+  /* ★★★ IMPORTANT FIXES ★★★ */
+  min-height: calc(100vh - 300px);
+   overflow-y: auto;
 }
 
-.lead {
-    font-weight: 600;
+.container-quiz, .container-end {
+  background-color: #F7E7CE;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
+  padding: 20px;
+
 }
+
 
 #start-screen p {
   font-size: 0.9rem;
@@ -75,7 +91,7 @@ p .lead{
     background-color: rgb(38, 128, 0);
     border: 2px outset;
      transition: transform 0.2s, background-color 0.2s;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
      
 
 }
@@ -83,7 +99,7 @@ p .lead{
     background-color: rgb(212, 140, 7);
     border: 2px outset;
     transition: transform 0.2s, background-color 0.2s;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     
 }
 
@@ -91,7 +107,7 @@ p .lead{
     background-color: rgb(255, 25, 0);
     border: 2px outset;
     transition: transform 0.2s, background-color 0.2s;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     
 }
 
@@ -198,14 +214,15 @@ font-size: 0.9rem;
 /* start button */
 
 .start-btn, .custom-btn-restart{
-    width: 200px;
+   
     text-transform: uppercase;
     background-color: midnightblue;
     transition: transform 0.1s, background-color 0.1s;
     border-radius: 8px;
-    padding: 4px 10px;
-    justify-content: center;
-    align-items: center;
+    padding: 10 0px;
+    margin-bottom: 10px;
+   
+ 
    
     
     
@@ -386,8 +403,9 @@ footer {
 }
 
 footer p {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: #05d6d9;
+  font-weight: 600;
 }
 
 footer p:hover {
@@ -399,6 +417,11 @@ footer p:hover {
   flex-direction: column;
   align-items: center;
 }
+  .socials a, .footer-info p {
+  margin: 0 6px;
+  font-size: 0.8rem;
+
+}
 
 @media (min-width: 576.1px) {
   .answers-container {
@@ -407,8 +430,9 @@ footer p:hover {
   h1 {
     font-size: 2rem;
   }
-  h5 {
-    font-size: 1.3rem;
+  h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
   }
 
   #start-screen p {
@@ -442,7 +466,7 @@ footer p:hover {
   }
   .socials a, .footer-info p {
   margin: 0 6px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 }
