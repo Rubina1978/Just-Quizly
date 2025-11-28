@@ -40,7 +40,12 @@ let selectedDifficulty = "";
 let selectedTopic = "";
 let stopConfetti = false;
 
-/* muted/unmuted operators */
+let modal = new bootstrap.Modal(document.getElementById('my-modal'));
+function showModal() {
+    modal.show();
+}
+
+//  muted/unmuted operators */
 const muteBtn = document.getElementById("mute-btn");
 const muteIcon = document.getElementById("mute-icon");
 let soundMuted = true;
@@ -280,6 +285,7 @@ function restartGame() {
     endScreen.classList.remove("active");
     startScreen.classList.add("active");
 }
+
 
 /* clear questions/answers before next quiz starts */
 function resetQuestions() {

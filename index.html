@@ -31,9 +31,9 @@
     <!-- right site of menu -->
     <div class="d-flex align-items-center">
 
-      <a href="#" class="me-3 text-decoration-none fw-bold">
-        Rules
-      </a>
+      <button class="btn btn-custom-modal" onclick=showModal()>
+        How to play?
+      </button>
 
       <!-- Mute button -->
       <button id="mute-btn" class="btn btn-outline-dark p-1">
@@ -44,6 +44,32 @@
 
   </div>
 </nav>
+
+<div id="my-modal" class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">How to play?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ol type="I">
+          <li>Pick your challenge: Easy, Medium, or Hard.</li>
+          <li>Choose your adventure topic — Geography, Music, or General Knowledge.</li>
+          <li>Read the question and tap the answer you believe is correct.</li>
+          <li>No take-backs! Once you click, your choice is final.</li>
+          <li>Finish all questions to see your score and a custom message.</li>
+          <li>Hit Restart to try again and beat your best score.</li>
+          <li>Please try not to cheat, yeah it's tempting though</li>
+          <li>Most importantly have fun with it!</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
