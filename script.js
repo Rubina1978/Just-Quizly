@@ -25,10 +25,10 @@ const scoreSpan = document.getElementById('score');
 const message = document.getElementById('message');
 
 /* sounds */
-const correctAnswerSound = new Audio('correct.mp3');
-const wrongAnswerSound = new Audio('wronganswer.mp3');
-const selectionSound = new Audio('selectionsound.mp3');
-const endQuizSound = new Audio('endquiz.mp3');
+const correctAnswerSound = new Audio('assets/audio/correct.mp3');
+const wrongAnswerSound = new Audio('assets/audio/wronganswer.mp3');
+const selectionSound = new Audio('assets/audio/selectionsound.mp3');
+const endQuizSound = new Audio('assets/audio/endquiz.mp3');
 
 /* other variables */
 let scorePoints = 0;
@@ -46,7 +46,7 @@ const muteIcon = document.getElementById("mute-icon");
 let soundMuted = true;
 muteBtn.addEventListener('click', () => {
     soundMuted = !soundMuted;
-    muteIcon.src = soundMuted ? "mute.png" : "unmute.png";
+    muteIcon.src = soundMuted ? "assets/images/mute.png" : "assets/images/unmute.png";
 });
 
 
@@ -260,7 +260,7 @@ function restartGame() {
     scorePoints = 0;
     scoreSpan.textContent = scorePoints;
     soundMuted = true;
-    muteIcon.src = "mute.png";
+    muteIcon.src = "assets/images/mute.png";
     endQuizSound.pause();
     endQuizSound.currentTime = 0;
 
