@@ -21,18 +21,18 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="d-flex d-flex flex-column min-vh-100 pt-2 pb-2">
+<body  class="d-flex flex-column min-vh-100 pt-2 pb-2 main-page">
   <nav class="navbar bg-body-bg fixed-top">
   <div class="container-fluid d-flex justify-content-between align-items-center">
 
     <!-- Brand -->
-    <a class="navbar-brand"  href="index.html" ><img src="assets/images/brandlogo.png" class="logo-img" width="30" alt="">Just Quizly</a>
+    <a class="navbar-brand"  href="index.html"><img src="assets/images/brandlogo.png" class="logo-img" width="30" alt="">Just Quizly</a>
 
     <!-- right site of menu -->
     <div class="d-flex align-items-center">
 
       <button class="btn btn-custom-modal" onclick=showModal()>
-        How to play?
+        Rules
       </button>
 
       <!-- Mute button -->
@@ -78,13 +78,13 @@
     <img src = "mute.png" class="mute-btn" id="mute-icon" width="40" alt="mute/unmute buttons">
   </button> -->
 
- <div id="start-screen" class="start-screen container text-center screen active">
+ <div id="start-screen" class="start-screen container text-center screen active mt-4 mb-4">
     <h1>Feeling Quizly?</h1>
     <p>Test your brain, learn something new, and have fun while at it!</p>
     <p>Pick your topic and difficulty, then let's get Quizly!</p>
 
     <!-- Difficulty -->
-    <h2>Difficulty</h2>
+    <h2 class="mt-2">Difficulty</h2>
     <div id="difficulty" class="d-flex flex-column align-items-center gap-2">
       <button class="btn btn-success difficulty custom-btn-easy w-80" data-difficulty="easy">Easy</button>
       <button class="btn btn-warning difficulty custom-btn-medium w-80" data-difficulty="medium">Medium</button>
@@ -134,13 +134,13 @@
     <div class="result-info"></div>
     <p class="score">you scored <span id="final-score">2</span> out of <span id="max-score">5</span></p>
     <p class="message" id="message">Well done!</p>
-    <button class="btn btn-primary custom-btn-restart btn-lg mt-3 mb-3" id="restart-btn">Restart Quiz</button>
+    <button class="btn btn-primary custom-btn-restart mt-3 mb-3" id="restart-btn">Restart Quiz</button>
   </div>
    
 
-  <footer id="contact" class=" text-center pt-3 pb-3 mt-auto fixed-bottom d-inline-block justify-content-around align-items-center ms-auto">
+  <footer id="contact" class=" text-center mt-auto my-auto fixed-bottom d-inline-block justify-content-around align-items-center ">
     <div class="footer-info text-center">       
-      <p class="justify-content-between">@Copyright created by Hana R (2025)</p>
+      <p class="justify-content-between ">@Copyright created by Hana R (2025)</p>
           <div class="socials">
             <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Visit our Instagram page (opens in new tab)"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Visit our Facebook page (opens in new tab)"><i class="fa-brands fa-square-facebook"></i></a>

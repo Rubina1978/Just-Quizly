@@ -6,7 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
+.main-page {
   width: 100%;
  
    /* container stays top-centered */
@@ -15,17 +15,61 @@ body {
   font-family: "Josefin Sans", sans-serif;
   background-color: #f907fc;
   background-image: linear-gradient(315deg, #f907fc 0%, #05d6d9 74%);
+  object-fit: cover;
   
   
 }
+/* error page 404 */
+.other-page {
+  width: 100%;
+  display: flex;
+  font-family: "Josefin Sans", sans-serif;
+  flex-direction: column;          
+  justify-content: center;         
+  align-items: center; 
+  background-color: #030e21; 
+  background-image: linear-gradient(315deg, #3928d2 0%, #05051a 34%, rgb(28, 28, 113));  /* Page background color */ /* or overlay, screen, darken, lighten */
+  padding: 2rem;
 
+}
+.error-page img {
+  max-width: 50%;               
+  height: auto; 
+
+}
+.error-page h1 {
+  color:#e155ca;
+  text-shadow: midnightblue;
+  font-size:2rem;
+  font-weight: 800;
+}
+
+.error-page p {
+  color:#e155ca;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+#home-btn {
+  background-color: midnightblue;
+  border:2px solid #e155ca;
+  color: #05d6d9;
+  font-weight: 700;
+}
+#home-btn:hover {
+ background-color:#e155ca;
+ border: 2px solid midnightblue;
+ color: midnightblue;
+}
+/* h1, h2 */
 h1 {
-  margin-top: 5px;
+  margin: 5px 0;
   font-weight: 700;
   font-size: 1.3rem;
 }
 h2 {
-  
+  margin: 4px 0;
   font-weight: 800;
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
@@ -34,7 +78,7 @@ h2 {
 .start-screen p {
   font-size: 0.9rem;
   letter-spacing: 0.1rem;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 
@@ -58,30 +102,16 @@ h2 {
 
 
 .container {
-  max-width: 700px;
   width: 80%;
-  margin-bottom: 20px;
+  max-width: 700px;
+  margin: 10px auto;
   background-color: #F7E7CE;
   border-radius: 10px;
   box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
-  padding: 20px;
-  /* height: auto; */
-
-  /* ★★★ IMPORTANT FIXES ★★★ */
-  min-height: calc(100vh - 300px);
-   overflow-y: auto;
+  padding: 8px;             
+  min-height: auto;  
+         
 }
-
-.container-quiz, .container-end {
-  background-color: #F7E7CE;
-  width: 80%;
-  max-width: 700px;
-  border-radius: 10px;
-  box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
-  padding: 20px;
-
-}
-
 
 #start-screen p {
   font-size: 0.9rem;
@@ -90,8 +120,8 @@ h2 {
 .custom-btn-easy{
     background-color: rgb(38, 128, 0);
     border: 2px outset;
-     transition: transform 0.2s, background-color 0.2s;
-    font-size: 0.9rem;
+    transition: transform 0.2s, background-color 0.2s;
+  
      
 
 }
@@ -99,7 +129,6 @@ h2 {
     background-color: rgb(212, 140, 7);
     border: 2px outset;
     transition: transform 0.2s, background-color 0.2s;
-    font-size: 1.3rem;
     
 }
 
@@ -107,16 +136,26 @@ h2 {
     background-color: rgb(255, 25, 0);
     border: 2px outset;
     transition: transform 0.2s, background-color 0.2s;
-    font-size: 1.3rem;
     
+}
+
+.custom-btn-easy,
+.custom-btn-medium,
+.custom-btn-hard,
+.topic-btn-geography,
+.topic.topic-btn-music,
+.topic-btn-general,
+.start-btn {
+  padding: 5px 10px;   
+  margin: 4px;         
+  font-size: 1rem;     
 }
 
 .custom-btn-hard:active, .custom-btn-medium:active, .custom-btn-easy:active {
   transform: scale(0.97)
 }
 
-/* topics buttons - general */
-
+/* topics buttons - Geography */
 
 .topic-btn-geography {
   background-color: #ff854d;
@@ -126,7 +165,7 @@ h2 {
   box-shadow: none;
 }
 
-/* Hover and focus */
+/* Geography Hover and focus */
 .topic-btn-geography:hover {
   background-color: #842e06;
   color: white;
@@ -149,7 +188,7 @@ h2 {
   
 }
 
-/* Hover and focus */
+/* music Hover and focus */
 .topic-btn-music:hover {
   background-color: #093f4e;
   color: white !important;
@@ -157,7 +196,7 @@ h2 {
   transition: 0.3s ease-in-out;
 }
 
-/* Active (pressed) */
+/* Music Active (pressed) */
 .topic-btn-music:active {
   background-color: #093f4e; 
   color: white;
@@ -170,11 +209,11 @@ h2 {
   color: white;
   border: none;
   transition: background-color 0.1s, transform 0.1s, box-shadow 0.1s;
-  box-shadow: none; /* remove Bootstrap shadow */
+  box-shadow: none;
   
 }
 
-/* Hover and focus */
+/* general Hover and focus */
 .topic-btn-general:hover {
   background-color: #480e7a;
   color: white;
@@ -183,7 +222,7 @@ h2 {
 
 }
 
-/* Active (pressed) */
+/* General Active (pressed) */
 .topic-btn-general:active {
   background-color: #093f4e; 
   color: white;
@@ -200,9 +239,8 @@ h2 {
 }
 
 .topic-btn, .difficulty{
-font-size: 0.9rem;
-  width: 75%;
-  padding: 5px 10px;
+  width: 80%;
+  padding: 3px 8px;
   border: none;
   border-radius: 6px;
   color: white;
@@ -220,12 +258,18 @@ font-size: 0.9rem;
     transition: transform 0.1s, background-color 0.1s;
     border-radius: 8px;
     padding: 10 0px;
-    margin-bottom: 10px;
-   
- 
-   
-    
-    
+      
+}
+
+/* quiz page */
+ .container-quiz, .container-end {
+  background-color: #F7E7CE;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 20px rgba(0,0,0,0.8);
+  padding: 20px;
+
 }
 .custom-btn:hover, .custom-btn-restart:hover {
   background-color: rgb(2, 2, 18);
@@ -326,8 +370,10 @@ font-size: 0.9rem;
   
 }
 
+
 /* end screen */
 
+/* message */
 .score, .message {
     font-size: 1.3rem;
     margin: 15px 0;
@@ -335,6 +381,7 @@ font-size: 0.9rem;
     height: auto;
 } 
 
+/* restart  */
 .custom-btn-restart:hover {
   background-color: rgb(2, 2, 18);
   border: none;
@@ -366,6 +413,7 @@ font-size: 0.9rem;
     background-color: #f452d9;
   }
 
+  /* navigation */
   .navbar-brand {
     font-size: 0.9rem;
   }
@@ -376,12 +424,13 @@ font-size: 0.9rem;
     letter-spacing: 0.1rem;
   }
 
+  /* modal */
   .btn-custom-modal {
     color: rgba(76, 232, 240, 0.955);
      text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.1rem;
-    margin-right: 1.2rem;
+    margin-right: 0.3rem;
   }
   .btn-custom-modal:hover{
     color: #f452d9;
@@ -393,23 +442,22 @@ font-size: 0.9rem;
 
    a {
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
+
+  /* brand logo */
 .logo-img {
-  margin-right: 0.8rem;
-  width:0.9rem;
+  margin-right: 0.3rem;
+  width: 0.9rem;
 }
 
 
-nav {
+/* footer */
+nav, footer {
   background-color: midnightblue;
   padding:1rem;
 }
 
-footer {
-  background-color: midnightblue;
-  
-}
 
 footer p {
   font-size: 0.8rem;
@@ -425,6 +473,7 @@ footer p:hover, .socials a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top:0.8rem   
 }
   .socials a, .footer-info p {
   margin: 0 6px;
@@ -433,20 +482,75 @@ footer p:hover, .socials a:hover {
   font-weight: 600;
 }
 
-@media (min-width: 576.1px) {
-  .answers-container {
-    grid-template-columns: repeat(2, 1fr);
+/* to fit even to the smallest phones */
+@media (max-width: 380px) {
+  .container,
+  .container-quiz,
+  .container-end,
+  .screen
+   {
+    padding: 0;
+    margin: 0;
   }
+
+   .btn,
+  .custom-btn-easy,
+  .custom-btn-medium,
+  .custom-btn-hard,
+  .topic-btn-geography,
+  .topic-btn-music,
+  .topic-btn-general {
+    padding: 4px 8px ;
+    font-size: 0.9rem !;
+  }
+
+   h1, h2, p {
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  h2 {
+    margin-top: 3px;
+    font-weight: 700;
+  }
+  .container {
+    max-width: 100%;
+    padding: 5px;
+  }
+
+  .screen.active {
+    justify-content: flex-start !important; 
+  }
+}
+
+footer {
+  padding: 0;
+}
+
+
+
+.error-page p{
+  font-size: 0.9rem;
+}
+
+
+
+@media (min-width: 768px) {
+  .container {
+    justify-content: flex-start;
+  }
+ 
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin: 1rem;
   }
 
   #start-screen p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
   }
   
@@ -457,8 +561,10 @@ footer p:hover, .socials a:hover {
   .question-text {
     font-size: 1.4rem;
   }
-
-  .navbar-brand, a  {
+ nav{
+  padding: 0.8rem;
+ }
+  .navbar-brand, .rules  {
     font-size: 1.2rem;
   }
 
@@ -469,15 +575,50 @@ footer p:hover, .socials a:hover {
     width: 28px;
   }
  
+
   .footer-info {
-    flex-direction: row;           /* horizontal */
-    justify-content: center;       /* centered */
-    gap: 2rem;                     /* space between text and icons */
+    flex-direction: row;           
+    justify-content: center;       
+    gap: 2rem; 
+    padding: 0.8rem; 
+                    
   }
   .socials a, .footer-info p {
   margin: 0 6px;
   font-size: 1.3rem;
 }
 
+.btn-custom-modal {
+ font-size: 1.3rem;
 }
-    
+
+.error-page img {
+  max-width: 50%;
+  max-height: 100vh;
+}
+
+}
+
+@media (min-width:989.9px) {
+   .answers-container {
+    grid-template-columns: repeat(2, 1fr);
+   
+  }
+  .error-page img {
+    max-width: 80%;
+  }
+
+  .error-page h1 {
+    font-size: 2.4rem;
+  }
+  .error-page p {
+    font-size: 1.3rem
+  } */
+
+  .error-page h1 {
+    font-size: 2.4rem;
+  }
+  .error-page p {
+    font-size: 1.3rem
+  } 
+}
