@@ -61,6 +61,7 @@
  background-color:#e155ca;
  border: 2px solid midnightblue;
  color: midnightblue;
+ transition: 0.3s ease-in-out;
 }
 /* h1, h2 */
 h1 {
@@ -370,7 +371,6 @@ h2 {
   
 }
 
-
 /* end screen */
 
 /* message */
@@ -385,7 +385,7 @@ h2 {
 .custom-btn-restart:hover {
   background-color: rgb(2, 2, 18);
   border: none;
-  
+  transition: 0.3s ease-in-out;
 } 
 
 .custom-btn-restart:active{
@@ -402,6 +402,7 @@ h2 {
     
 
   }
+  /* mute button */
   #mute-icon {
     background-color:  rgba(76, 232, 240, 0.955);
     border: none;
@@ -411,6 +412,7 @@ h2 {
   }
   #mute-icon:hover {
     background-color: #f452d9;
+    transition: 0.3s ease-in-out;
   }
 
   /* navigation */
@@ -434,10 +436,40 @@ h2 {
   }
   .btn-custom-modal:hover{
     color: #f452d9;
+    transition: 0.3s ease-in-out;
   }
 
+  .modal-title {
+    font-size: 1.4rem;
+    color: midnightblue;
+    font-weight: 700;
+  }
+
+  .modal-content {
+    color: #040404;
+    line-height: 1.5rem;
+
+  }
+
+  .modal-body{
+    background-color: #f4ebdc;
+  }
+  .modal-header, .modal-footer {
+  background-color: #f8d294;
+  }
+  .custom-btn-modal {
+    background-color: midnightblue;
+  }
+  .custom-btn-modal:hover {
+    background-color: #3324be;
+    transition: 0.3s ease-in-out;
+  }
+
+  
+/* navbar */
   .navbar-brand:hover  {
     color: #e155ca;
+    transition: 0.3s ease-in-out;
   }
 
    a {
@@ -467,6 +499,7 @@ footer p {
 
 footer p:hover, .socials a:hover {
   color:#e155ca;
+  transition: 0.3s ease-in-out;
 }
 
 .footer-info {
