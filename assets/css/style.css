@@ -63,6 +63,7 @@
  color: midnightblue;
  transition: 0.3s ease-in-out;
 }
+/* start screen */
 /* h1, h2 */
 h1 {
   margin: 5px 0;
@@ -393,8 +394,6 @@ h2 {
   background-color: midnightblue!important; /*override default active style*/
 }
 
-
-
   /* compact mute button inside navbar */
   .nav-mute-btn {
     
@@ -433,6 +432,7 @@ h2 {
     font-weight: 700;
     letter-spacing: 0.1rem;
     margin-right: 0.3rem;
+    
   }
   .btn-custom-modal:hover{
     color: #f452d9;
@@ -516,6 +516,63 @@ footer p:hover, .socials a:hover {
 }
 
 /* to fit even to the smallest phones */
+@media (max-width:374.9px) {
+
+  /* start screen */
+   .btn,
+  .custom-btn-easy,
+  .custom-btn-medium,
+  .custom-btn-hard,
+  .topic-btn-geography,
+  .topic-btn-music,
+  .topic-btn-general {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    margin: 0;
+  }
+  .navbar-brand, .nav-mute-btn, .btn-custom-modal {
+    font-size: 0.8rem;
+    padding: 0;
+  }
+ .footer-info p, .socials a  {
+  font-size: 0.85rem;
+  padding: 0;
+ }
+ #start-screen h1 {
+  font-size: 1.1rem;
+  padding: 0.3rem 0;
+ }
+
+ .start-screen h2 {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+ }
+ #start-screen .container {
+  padding:0.6rem;
+ }
+ #start-screen p {
+  font-size: 0.75rem;
+  font-family: 400;
+ }
+
+/* quiz screen */
+ #quiz-screen, #end-screen p {
+font-size: 0.95rem;
+}
+.container-quiz {
+  padding: 0, 1rem;
+ 
+  
+}
+.custom-btn-answer {
+font-size: 0.85rem;
+padding: 0;
+width:90%;
+margin: 0 auto;
+}
+
+}
 @media (max-width: 380px) {
   .container,
   .container-quiz,
