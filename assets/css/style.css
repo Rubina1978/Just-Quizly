@@ -405,7 +405,7 @@ button.custom-btn-answer.incorrect:active {
 }
 
 /* Buttons uniform size */
-#difficulty, #topics, .custom-btn-answer {
+#difficulty, #topics, .custom-btn-answer, .custom-btn-restart {
   width: 80%;
   text-transform: uppercase;
 }
@@ -535,7 +535,7 @@ footer p {
 }
 
 
-@media (min-width: 360px) {
+@media screen and (min-width:360px) {
   /* error page */
   .other-page img {
   max-width: 100%;
@@ -551,6 +551,8 @@ footer p {
   font-weight: 600;
  
 }
+
+
 
 .other {
   font-size: 1.3rem;
@@ -568,6 +570,7 @@ footer p {
       width: 90%;
       padding: 1rem;
       margin: 0 auto;
+      
   }
 
   .answers-container {
@@ -581,6 +584,7 @@ footer p {
     padding: 5px 10px;      
     font-size: 0.8rem; 
     border: none;
+    /* flex-grow: 1; */
   }
 
   .question-text {
@@ -609,15 +613,16 @@ footer p {
   .topic-btn,
   .custom-btn-easy,
   .custom-btn-medium,
-  .custom-btn-hard,
-  .custom-btn-restart {
-    font-size: 0.9rem;
-    padding: 0.9rem, 1rem ;
+  .custom-btn-hard
+  {
+    font-size: 1rem;
+    padding: 1rem, 2rem ;
   }
 
-  .start-btn {
+  .start-btn, .custom-btn-restart {
     margin: 1rem;
-    padding: 0.9rem, 1rem;
+    padding: 1rem, 1.5rem;
+    font: 1.1rem;
   }
 
   .custom-btn-answer {
@@ -633,6 +638,62 @@ footer p {
   
 }
 
+@media screen and (min-width:411px) and (max-width:767.9px){
+  .navbar, footer {
+    padding: 0.8rem;
+  }
+
+  .navbar-brand, .start-screen p, .footer-info p{
+    font-size: 1.2rem;
+  }
+
+   .btn-custom-modal {
+    font-size: 1.2rem;
+   }
+  .container, .container-end {
+   
+    padding: 0, 8px;
+  }
+
+  .start-screen h1 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .start-screen h2 {
+    font-size:1.2rem ;
+    margin: 0.8rem;
+  }
+  .start-screen p {
+    font-size: 1rem;
+  }
+
+  .difficulty, .topic-btn, .custom-btn-answer {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .start-btn, .custom-btn-restart {
+    font-size: 1.2rem;
+  }
+
+  .question-text {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .quiz-info p {
+    font-size: 1.1rem;
+  }
+  .message {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  .quiz-info h1 {
+    font-size: 1.5rem;
+  }
+
+}
 @media (min-width: 768px) {
 
   .modal-title {
@@ -676,6 +737,11 @@ footer p {
   margin-top: 2rem;
   font-size: 1.3rem;
 }
+ 
+  .other-page #mute-icon{
+    width: 60px;
+  }
+
 
 
   /* start page */
@@ -691,13 +757,13 @@ footer p {
     font-weight: 800;
   }
 
-  .question-text {
+  .question-text, .message {
     font-size: 1.4rem;
   }
 
  .start-screen p {
-    font-size: 1.3rem;
-    font-weight: 700;
+    font-size: 1.2rem;
+    font-weight: 600;
   }
 
   .error-page img {
@@ -725,8 +791,8 @@ footer p {
 .topic-btn-music,
 .topic-btn-general {
   padding: 0.5rem 0.9rem;
-  margin: 0.5rem;
-  font-size: 1.2rem;
+  margin: 0.3rem;
+  font-size: 1.1rem;
   border-radius: 5px;
   font-weight: 700;
  
@@ -734,9 +800,17 @@ footer p {
 
 .start-btn {
   font-size: 1.1rem;
-  margin-top: 0.9rem;
+  margin-top: 1rem;
   padding:1rem;
   
+}
+
+.start-screen h1 {
+  font-size: 1.5rem;
+}
+
+.start-screen h2 {
+  font-size: 1.3rem;
 }
 
 .custom-btn-answer {
@@ -747,7 +821,7 @@ footer p {
   margin-right: 0.4rem;
 }
 .bg-body-bg, footer {
-  padding: 0.8rem;
+  padding: 0.6rem;
 }
 
 .footer-info p, .navbar-brand, .navbar .btn-custom-modal, .socials a {
@@ -760,7 +834,7 @@ footer p {
     justify-content:space-around;   
     align-items: center;       
     gap: 1rem;   
-    padding: 0.6rem;           
+    padding: 0.5rem;           
   }
 
   .footer-info p, 
@@ -771,12 +845,7 @@ footer p {
   .socials a {
     margin-left: 0.3rem;      
   }   
-  
-  .other-page #mute-icon{
-    width: 60px
-  }
-
-
+ 
   }
 
 
@@ -854,7 +923,6 @@ footer p {
     width: 100%;
 
   }
-
 
 }
 
