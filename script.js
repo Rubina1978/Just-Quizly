@@ -188,7 +188,9 @@ function selectAnswer(clickedBtn) {
     const selectedAnswer = clickedBtn.dataset.answer;
 
     // disable all buttons
-    buttons.forEach(btn => btn.classList.add("disabled"));
+    buttons.forEach(btn => {
+        if (btn !==clickedBtn) btn.classList.add("disabled");
+    });
 
     // highlight the correct answer
     // buttons.forEach(btn => {
