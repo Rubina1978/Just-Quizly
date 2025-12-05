@@ -37,7 +37,7 @@
 
       <!-- Mute button -->
       <button id="mute-btn" class="btn btn-outline">
-        <img src="assets/images/mute.png" id="mute-icon" width="30" alt="mute/unmute">
+        <img src="assets/images/mute.png" id="mute-icon" width="38" alt="mute/unmute">
       </button>
 
     </div>
@@ -87,9 +87,9 @@
     <!-- Topics -->
     <h2>Topic</h2>
     <div id="topics" class="d-flex flex-column align-items-center">
-        <button type="button" class="topic-btn topic-btn-geography w-100 custom-btn-topic1" data-category="22">Geography</button>
-        <button type="button" class="topic-btn topic-btn-music w-100 custom btn-topic2" data-category="12">Music</button>
-        <button type="button" class="topic-btn topic-btn-general w-100 custom-btn-topic3" data-category="9">General</button>
+        <button type="button" class=" btn topic-btn topic-btn-geography w-100 custom-btn-topic1" data-category="22">Geography</button>
+        <button type="button" class=" btn topic-btn topic-btn-music w-100 custom btn-topic2" data-category="12">Music</button>
+        <button type="button" class=" btn topic-btn topic-btn-general w-100 custom-btn-topic3" data-category="9">General</button>
     </div>
 
     <button type= "button"class="btn btn-primary start-btn mb-2 custom-btn btn-lg" id="start-btn">Start Quiz</button>
@@ -98,7 +98,7 @@
    <!-- Quiz Page  resource Codesistency build 15 projects html css java script -->
   <div id="quiz-screen" class="container-quiz screen text-center">
     
-    <p id="current-question-text" class="question-text">Questions appear here</p>
+    <p id="current-question-text" class="question-text flex-fill">Questions appear here</p>
     <div class="quiz-info">
       
      
@@ -106,7 +106,7 @@
       <p>Score: <span id="score">0</span></p>
     </div>
 
-        <div id="answers-container" class="answers-container">
+        <div id="answers-container" class="answers-container flex-fill mx-auto">
         
     <!-- answer buttons will be inserted here from js code later-->
 
@@ -126,7 +126,7 @@
     <div class="result-info"></div>
     <p class="score">you scored <span id="final-score">2</span> out of <span id="max-score">5</span></p>
     <p class="message" id="message">Well done!</p>
-    <button class="btn btn-primary custom-btn-restart" id="restart-btn">Restart Quiz</button>
+    <button class="btn btn-primary custom-btn-restart mx-auto w-50" id="restart-btn">Restart Quiz</button>
   </div>
    
 

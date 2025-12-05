@@ -63,32 +63,28 @@ function prepareQuiz() {
         btn.addEventListener('click', () => {
             selectedDifficulty = btn.dataset.difficulty;
             /* adding disabled classes to rest of the options when option selected */
-            difficultyButtons.forEach(b => {
-                if (b === btn) {
-                    b.classList.add("selected");
-                    b.disabled = false;
+            difficultyButtons.forEach(b => b.classList.remove("selected"));
+                    btn.classList.add("selected");
                     if (!soundMuted) selectionSound.play();
 
-                } 
-            });
+            
         });
     });
 
     // topic buttons
-    topicButtons.forEach(btn => {
+        topicButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             selectedTopic = btn.dataset.category;
-            /* adding disabled classes to rest of the options when option selected */
-            topicButtons.forEach(b => {
-                if (b === btn) {
-                    b.classList.add("selected");
-                    b.disabled = false;
-                    if (!soundMuted) selectionSound.play();
 
-                } 
-            });
+            // REMOVE selected from other buttons
+            topicButtons.forEach(b => b.classList.remove("selected"));
+
+            // ADD selected to clicked button
+            btn.classList.add("selected");
+            if (!soundMuted) selectionSound.play();
         });
     });
+
 
     // start button
     startBtn.addEventListener('click', async () => {
