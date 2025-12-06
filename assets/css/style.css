@@ -88,19 +88,21 @@
 h1 {
   font-size: 0.9rem;
   margin:  0;
+  padding-bottom: 0.2rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 0.8rem;
-  margin: 3px 0;
+  font-size: 0.9rem;
+  margin: 0.3rem, 0;
   letter-spacing: 0.1rem;
   font-weight: 700;
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  padding: 0;
   letter-spacing: 0.05rem;
 }
 /* containers */
@@ -147,8 +149,8 @@ p {
 .topic-btn-music,
 .topic-btn-general,
 .start-btn {
-  padding: 0.17rem 0.4rem!important;
-  margin: 0.2rem;
+  padding: 0.16rem;
+  margin: 0.25rem;
   border-radius: 5px;
   font-weight: 700;
 }
@@ -211,7 +213,7 @@ p {
 .start-btn, .custom-btn-restart{
   background-color: midnightblue;
   transition: transform 0.1s, background-color 0.1s;
-  border-radius: 8px;
+  border-radius: 5px;
   padding: 6 0px;   
 }
 
@@ -362,9 +364,9 @@ button.custom-btn-answer.incorrect:active {
 .custom-btn-easy.selected,
 .custom-btn-medium.selected,
 .custom-btn-hard.selected,
-.topic-btn-geography.selected,
-.topic-btn-music.selected,
-.topic-btn-general.selected {
+.topic-btn-geography.selected:focus,
+.topic-btn-music.selected:focus,
+.topic-btn-general.selected:focus {
   border: 1px solid #ff00cc;
   box-shadow: 0 0 5px 5px rgba(255, 0, 200, 0.5);
 } 
@@ -492,13 +494,6 @@ nav {
   padding: 0;
 }
 
-footer p {
-  font-size: 0.9rem;
-  color: #05d6d9;
-  font-weight: 600;
-  padding-top:0.3rem; 
-}
-
 .footer-info {
   display: flex;
   flex-direction: column;
@@ -510,6 +505,7 @@ footer p {
   margin: 0 auto;
   color: #05d6d9;
   font-weight: 600;
+  
 }
 
 /* end screen */
@@ -544,7 +540,7 @@ footer p {
 }
 
 
-@media screen and (min-width:360px) and (max-width: 410.9px) {
+@media screen and (min-width:360px) and (max-width: 410.99px) {
   /* error page */
   .other-page img {
   max-width: 100%;
@@ -575,10 +571,8 @@ footer p {
   .container-quiz,
   .container-end {
       width: 90%;
-      padding: 0.8rem;
-      margin: 0 auto;
-      
-      
+      padding: 0.6rem;
+      margin: 0 auto; 
   }
 
   .answers-container {
@@ -605,19 +599,22 @@ footer p {
 
   /* main page */
 
-    .navbar-brand, .btn-custom-modal, .start-screen p, .footer-info p{
+    .navbar-brand, .btn-custom-modal, .start-screen p {
     font-size: 0.9rem;
+    padding-top: 0.7rem;
 
   }
+  .footer-info p {
+    padding-top: 0.3rem;
+  }
   h1 { 
-    font-size: 1.1rem; 
+    font-size: 1.15rem; 
   }
 
   h2 {
     font-size: 1rem;
-    margin-top: 0.5rem;
-    padding: 0;
-    font-weight: 700;
+    padding: 0.3rem;
+    font-weight: 800;
   }
 
   p {
@@ -631,12 +628,11 @@ footer p {
   .custom-btn-hard
   {
     font-size: 0.9rem;
-    padding: 0.8rem, 2rem ;
+    padding: 0.15rem 1rem;
   }
 
   .start-btn, .custom-btn-restart {
-    font-size: 0.8rem;
-    margin-top: 0.6rem;
+    margin-top: 0.7rem;
   }
 
   .custom-btn-answer {
@@ -656,17 +652,34 @@ footer p {
 }
 
 @media screen and (min-width:411px) and (max-width:767.9px){
-  .navbar, .footer-info {
-    padding: 0.4rem;
+
+  .container-error img {
+    max-width: 300px;
+  }
+
+  .container-error h1 {
+    font-size: 1.8rem;
+  }
+  .container-error p {
+    font-size: 1.1rem;
+  }
+  /* main page */
+  .navbar {
+    padding: 0.5rem;
+  }
+  .footer-info {
+    padding-top: 0.5rem;
   }
 
   .navbar-brand, .btn-custom-modal, .start-screen p, .footer-info p{
-    font-size: 1rem;
+    font-size: 0.9rem;
+    padding: 0;
   }
 
   .container, .container-end {
     padding: 0;
     margin: 0;
+    flex-shrink: 1;
   }
 
   .start-screen h1 {
@@ -676,22 +689,26 @@ footer p {
 
   .start-screen h2 {
     font-size:1.1rem ;
-    margin: 0.8rem;
+    padding: 0;
     font-weight: 700;
   }
   .start-screen p {
     font-size: 1rem;
-    margin: 0, auto;
+    
   }
 
   .difficulty, .topic-btn, .custom-btn-answer {
     font-size: 1rem;
     margin-bottom: 0.5rem;
-    padding: 1.3rem;
+    padding: 0.5rem;
+   
   }
   .start-btn, .custom-btn-restart {
     font-size: 1rem;
-    margin-top: 1rem;
+    margin: 0.6rem auto;
+    padding: 0 0.6rem;
+    line-height: 1.8;
+    
   }
 
   .question-text {
@@ -701,7 +718,7 @@ footer p {
   }
 
   .quiz-info p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   .message {
     font-size: 1.3rem;
@@ -713,6 +730,9 @@ footer p {
    #mute-icon {
     width: 1.6rem;
     padding: 0;
+  }
+  .logo-img {
+    width:1.2rem;
   }
 
   
@@ -803,7 +823,7 @@ footer p {
 .topic-btn-geography,
 .topic-btn-music, 
 .topic-btn-general {
-  padding: 1rem;
+  padding: 0.8rem;
   margin-bottom: 0.5rem;
   font-size: 1rem;
   border-radius: 7px;
@@ -813,8 +833,10 @@ footer p {
   }
 
 .start-btn {
-  font-size: 1.5rem;
-  margin-top: 2rem;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+  padding: 0.3rem 2rem;
+  line-height: 2rem;
   
 }
 
@@ -908,7 +930,21 @@ footer p {
     width: 35px;
   }
 
+  /* modal */
+
+  .modal-title {
+    font-size: 1.7rem;
+  }
+
+  .modal-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+
+    
+  }
+
   /* main page */
+
   .question-text {
     font-size: 1.5rem;
   }
@@ -969,7 +1005,11 @@ footer p {
 
 .container-quiz, .container {
       width: 80%; 
-      padding: 2rem 
+      padding: 2rem; 
+  }
+
+  .start-screen h1 {
+    font-size: 2rem;
   }
 .custom-btn-easy, 
 .custom-btn-hard, 
