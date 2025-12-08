@@ -101,12 +101,11 @@
     <p id="current-question-text" class="question-text flex-fill">Questions appear here</p>
     <div class="quiz-info">
       
-     
       <p>Question <span id="current-question-number"> 1</span> of <span id="total-questions"> 10</span></p>
       <p>Score: <span id="score">0</span></p>
     </div>
 
-        <div id="answers-container" class="answers-container flex-fill mx-auto">
+    <div id="answers-container" class="answers-container flex-fill mx-auto">
         
     <!-- answer buttons will be inserted here from js code later-->
 
@@ -122,11 +121,15 @@
 
   <!-- End Page -->
   <div id="end-screen" class="screen container-end text-center ">
-    <h1 class="mt-3">And you are done!</h1>
-    <div class="result-info"></div>
-    <p class="score">you scored <span id="final-score">2</span> out of <span id="max-score">5</span></p>
-    <p class="message" id="message">Well done!</p>
-    <button class="btn btn-primary custom-btn-restart mx-auto w-50" id="restart-btn">Restart Quiz</button>
+    <div class="result">
+      <h1 class="mt-3">And you are done!</h1>
+      <p class="score">you scored <span id="final-score">2</span> out of <span id="max-score">5</span></p>
+      <p class="message" id="message">Well done!</p>
+         
+    </div>
+      <div>
+      <button class="btn btn-primary custom-btn-restart mx-auto" id="restart-btn">Restart Quiz</button>
+    </div>
   </div>
    
 
