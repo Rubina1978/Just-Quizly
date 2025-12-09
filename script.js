@@ -1,38 +1,41 @@
 /* screens */
-const startScreen = document.getElementById('start-screen');
-const quizScreen = document.getElementById('quiz-screen');
-const endScreen = document.getElementById('end-screen');
+const startScreen = document.getElementById("start-screen");
+const quizScreen = document.getElementById("quiz-screen");
+const endScreen = document.getElementById("end-screen");
 
 /* difficulty */
-const difficultyButtons = document.querySelectorAll('.difficulty');
+const difficultyButtons = document.querySelectorAll(".difficulty");
 
 /* topic */
-const topicButtons = document.querySelectorAll('.topic-btn');
+const topicButtons = document.querySelectorAll(".topic-btn");
 
 /* quiz features */
-const startBtn = document.getElementById('start-btn');
-const currentQuestionEl = document.getElementById('current-question-text');
-const currentQuestionNumber = document.getElementById('current-question-number');
+const startBtn = document.getElementById("start-btn");
+const currentQuestionEl = document.getElementById("current-question-text");
+const currentQuestionNumber = document.getElementById("current-question-number");
 const answersContainer = document.getElementById("answers-container");
-const finalScoreSpan = document.getElementById('final-score');
-const maxScoreSpan = document.getElementById('max-score');
+const finalScoreSpan = document.getElementById("final-score");
+const maxScoreSpan = document.getElementById("max-score");
 
 const restartQuizButton = document.getElementById("restart-btn");
-const progressBar = document.getElementById('progress');
+const progressBar = document.getElementById("progress");
 
 /* score and message features */
-const scoreSpan = document.getElementById('score');
-const message = document.getElementById('message');
+const scoreSpan = document.getElementById("score");
+const message = document.getElementById("message");
 
 /* sounds */
-const correctAnswerSound = new Audio('assets/audio/correct.mp3');
-const wrongAnswerSound = new Audio('assets/audio/wronganswer.mp3');
-const selectionSound = new Audio('assets/audio/selectionsound.mp3');
-const endQuizSound = new Audio('assets/audio/endquiz.mp3');
+const correctAnswerSound = new Audio("assets/audio/correct.mp3");
+const wrongAnswerSound = new Audio("assets/audio/wronganswer.mp3");
+const selectionSound = new Audio("assets/audio/selectionsound.mp3");
+const endQuizSound = new Audio("assets/audio/endquiz.mp3");
+
 
 /* other variables */
 let scorePoints = 0;
 let currentQuestionIndex = 0;
+
+
 
 // function to prepare quiz based on selected difficulty and topics corrected with help of chatgpt
 let questions = [];
@@ -40,7 +43,7 @@ let selectedDifficulty = "";
 let selectedTopic = "";
 let stopConfetti = false;
 
-let modal = new bootstrap.Modal(document.getElementById('my-modal'));
+let modal = new bootstrap.Modal(document.getElementById("my-modal"));
 function showModal() {
     modal.show();
 }
@@ -55,14 +58,14 @@ muteBtn.addEventListener('click', () => {
 });
 
 
-/* preparation for the quiz; difficulty + topic */
+/*preparation for the quiz; difficulty + topic*/
 function prepareQuiz() {
 
     // difficulty buttons
     difficultyButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             selectedDifficulty = btn.dataset.difficulty;
-            /* adding disabled classes to rest of the options when option selected */
+            /*adding disabled classes to rest of the options when option selected*/
             difficultyButtons.forEach(b => b.classList.remove("selected"));
                     btn.classList.add("selected");
                     if (!soundMuted) selectionSound.play();
@@ -253,7 +256,6 @@ function showResults() {
     endStreetConfetti();
 }
 
-
 /* the restart button and going back to start screen */
 restartQuizButton.addEventListener('click', restartGame);
 function restartGame() {
@@ -304,7 +306,7 @@ function resetQuestions() {
 
 
 /* code from confetti https://www.kirilv.com/canvas-confetti/ */
-function endStreetConfetti() {
+function endStreetConfetti() { 
     var end = Date.now() + (10 * 1000);
 
     // confetti colors

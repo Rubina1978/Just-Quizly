@@ -141,7 +141,7 @@ p {
 }
 
 .custom-btn-easy{
-    background-color: #2D9201;
+    background-color: #056803;
     color: white;;
     transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
     border: none; 
@@ -150,14 +150,14 @@ p {
     
 }
 .custom-btn-medium {
-    background-color: #FFD82C;
+    background-color: #f9e50b;
     transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
     border: none;
     
 }
 
 .custom-btn-hard {
-  background-color: #FF1900;
+  background-color: #b51b2a;
   color: white;
   transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
   border: none;
@@ -165,7 +165,7 @@ p {
 }
 
 .topic-btn-geography {
-  background-color: #ec7943;
+  background-color: #df652d;
   color: #ffffff;
   transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
   border: none;
@@ -187,7 +187,7 @@ p {
 }
   
 .start-btn, .custom-btn-restart{
-  background-color: midnightblue;
+  background-color: #191971;
   transition: transform 0.1s, background-color 0.1s;
   border-radius: 5px;
   padding: 6 0px;   
@@ -247,7 +247,7 @@ p {
   }
   .modal-title {
     font-size: 1.1rem;
-    color: midnightblue;
+    color: #191970;
     font-weight: 700;
   }
   .modal-content {
@@ -263,7 +263,7 @@ p {
   padding: 0.8rem;
   }
   .custom-btn-modal {
-    background-color: midnightblue;
+    background-color: #191970;
     padding: 0.2rem, 0.5rem;
   }
   .custom-btn-modal:hover {
