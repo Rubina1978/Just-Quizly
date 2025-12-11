@@ -38,7 +38,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | [404.html](https://github.com/Rubina1978/Just-Quizly/blob/main/404.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://rubina1978.github.io/Just-Quizly/404.html) | ![screenshot](documentation/validation/html--404.png) | ⚠️ Notes (if applicable) |
+|  | [404.html](https://rubina1978.github.io/Just-Quizly/test) | [HTML Validator](https://validator.w3.org/nu/?doc=http%3A%2F%2F127.0.0.1%3A5500%2F404.html#textarea) | ![screenshot](documentation/validation/screenshot-no-error-404.png) |  |
 |  | [index.html](https://github.com/Rubina1978/Just-Quizly/blob/main/index.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://rubina1978.github.io/Just-Quizly/index.html) | ![screenshot](documentation/validation/html--index.png) | ⚠️ Notes (if applicable) |
 |  | [modal.html](https://github.com/Rubina1978/Just-Quizly/blob/main/modal.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https://rubina1978.github.io/Just-Quizly/modal.html) | ![screenshot](documentation/validation/html--modal.png) | ⚠️ Notes (if applicable) |
 
