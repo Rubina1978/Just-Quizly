@@ -1,3 +1,6 @@
+
+/* global: modal, confetti */
+
 /* screens */
 const startScreen = document.getElementById("start-screen");
 const quizScreen = document.getElementById("quiz-screen");

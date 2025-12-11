@@ -807,7 +807,7 @@ nav {
         
 }
 .other-page .navbar {
-  padding: 1rem;
+  padding: 0.4rem;
 }
 .other-page .logo-img {
   margin-right: 0.5rem;
@@ -817,6 +817,10 @@ nav {
   font-size: 1.3rem;
   font-weight: 600;
  
+}
+
+.error-page img {
+  margin-top: 1rem;
 }
 
 .other {
@@ -938,13 +942,16 @@ nav {
   /* error page */
   .container-error {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
+ 
+
 }
+
     /* error page */
 
 #home-btn {
-  margin-top: 2rem;
-  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
   
 }
   .other-page img {
@@ -963,20 +970,28 @@ nav {
   padding-bottom: 0.5rem;
   font-weight: 800;
 }
-  .other-page img {
-    max-width: 1000%;
-  }
 
 .other-page h1 { 
-  font-size: 2.2rem; 
+  font-size: 2.1rem; 
+  margin-top: 0;
+
+  }
+
+  .error-page {
+    width: 100%
   }
 .other-page p {
-  font-size: 1.3rem; 
+  font-size: 1.1rem; 
+  }
+
+  .other-page .navbar {
+    padding: 0.4rem;
   }
 
   .other-page #mute-icon {
     width: 35px;
   }
+
 
   /* modal */
 
@@ -987,9 +1002,11 @@ nav {
   .modal-body {
     font-size: 1.1rem;
     line-height: 1.8;
-
+  
+    
     
   }
+
 
   /* main page */
 
@@ -1095,6 +1112,13 @@ nav {
   and (min-height: 1024px)
   and (orientation: portrait) {
 
+.error-page img{
+  max-width: 500px;
+}
+.error-page p {
+  font-size: 1rem;
+}
+
 .start-screen h1 {
   font-size: 1.5rem;
 
@@ -1111,7 +1135,7 @@ nav {
   
 }
 
-.start-btn {
+.start-btn, .error-page .custom-btn {
 margin-top: 1rem;
 padding: 1rem 1.5rem;
 font-size: 1.3rem;
