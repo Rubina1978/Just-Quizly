@@ -95,7 +95,7 @@ h1 {
 
 h2 {
   font-size: 0.9rem;
-  margin: 0.3rem, 0;
+  margin: 0.3rem 0;
   letter-spacing: 0.1rem;
   font-weight: 700;
 }
@@ -135,7 +135,7 @@ p {
 .topic-btn,
 .start-btn {
   text-transform: uppercase;
-  letter-spacing: 0.1;
+  letter-spacing: 0.1rem;
   font-size: 0.6rem;
 
 }
@@ -190,7 +190,7 @@ p {
   background-color: #191971;
   transition: transform 0.1s, background-color 0.1s;
   border-radius: 5px;
-  padding: 6 0px;   
+  padding: 6px 0;   
 }
 
 .custom-btn-restart {
@@ -264,7 +264,7 @@ p {
   }
   .custom-btn-modal {
     background-color: #191970;
-    padding: 0.2rem, 0.5rem;
+    padding: 0.2rem 0.5rem;
   }
   .custom-btn-modal:hover {
     background-color: #3324be;
@@ -620,7 +620,7 @@ nav {
   }
 
   .start-btn, .custom-btn-restart {
-    padding: 0.4rem, 0.9rem;
+    padding: 0.4rem 0.9rem;
     margin-top: 0.9rem;
     margin-bottom: 0.2rem;
 
@@ -1168,7 +1168,7 @@ font-size: 1.3rem;
   }
 .container-quiz, .container {
       width: 80%;
-      padding: 0.3rem, 0; 
+      padding: 0.3rem 0; 
       height: 80vh;
   }
 
