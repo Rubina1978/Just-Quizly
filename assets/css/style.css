@@ -850,6 +850,7 @@ nav {
  .question-text, .message {
     font-size: 1.4rem;
     margin-top: 2rem;
+   
     
   } 
  
@@ -931,8 +932,9 @@ nav {
   .custom-btn-restart {
     display: block;
     width:100%;
-
+    padding: 0.5rem 1rem!important;
 }
+
 }
 
 @media (min-width: 992px)
