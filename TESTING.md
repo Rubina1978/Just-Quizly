@@ -123,7 +123,7 @@ I've tested my deployed project to check for responsiveness issues.
 | Page | Mobile | Tablet | Desktop | Notes |
 | --- | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/responsiveness/screenshot-home-mobile.png) | ![screenshot](documentation/responsiveness/screenshot-home-tablet.png) | ![screenshot](documentation/responsiveness/screenshot-home-desktop.png) | Works as expected |
-| Quiz | ![screenshot](documentation/responsiveness/screenshot-mobile-quiz-page.png) | ![screenshot](documentation/responsiveness/tablet-game.png) | ![screenshot](documentation/responsiveness/desktop-game.png) | Works as expected |
+| Quiz | ![screenshot](documentation/responsiveness/screenshot-mobile-quiz-page.png) | ![screenshot](documentation/responsiveness/screenshot-tablet-quiz.png) | ![screenshot](documentation/responsiveness/screenshot-desktop-quiz-page.png) | Works as expected |
 | 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
 
 ## Browser Compatibility
