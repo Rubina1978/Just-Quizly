@@ -38,8 +38,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-|  | [404.html](https://rubina1978.github.io/Just-Quizly/test) | [HTML Validator](https://validator.w3.org/nu/?doc=http%3A%2F%2F127.0.0.1%3A5500%2F404.html#textarea) | ![screenshot](documentation/validation/screenshot-no-error-404.png) |  |
-|  | [index.html](https://rubina1978.github.io/Just-Quizly/index) | [HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frubina1978.github.io%2FJust-Quizly%2F) | ![screenshot](documentation\validation\screenshot-no-errors-index-page.png) |  |
+|  | [404.html](https://rubina1978.github.io/Just-Quizly/404) | [HTML Validator](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Frubina1978.github.io%2FJust-Quizly%2F404) | ![screenshot](documentation/validation/screenshot-no-error-404.png) |  |
+|  | [index.html](https://rubina1978.github.io/Just-Quizly/index) | [HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frubina1978.github.io%2FJust-Quizly%2F) | ![screenshot](documentation/validation/screenshot-no-errors-index-page.png) |  |
 |  | [modal.html](https://github.com/Rubina1978/Just-Quizly/blob/main/modal.html) | [HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Frubina1978.github.io%2FJust-Quizly%2F#textarea) | ![screenshot](documentation/validation/screeshot-no-errors-modal.png) |  |
 
 
@@ -66,7 +66,7 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| assets | [style.css](https://github.com/Rubina1978/Just-Quizly/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://rubina1978.github.io/Just-Quizly) | ![screenshot](documentation/validation/css-assets-style.png) | ⚠️ Notes (if applicable) |
+| assets | [style.css](https://github.com/Rubina1978/Just-Quizly/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Frubina1978.github.io%2FJust-Quizly%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](documentation/validation/screenshot-no-errors-CSS.png) |  |
 
 
 ### JavaScript
