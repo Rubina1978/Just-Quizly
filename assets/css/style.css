@@ -949,7 +949,7 @@ nav {
 
     /* error page */
 #home-btn {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   font-size: 1rem;
   
 }
@@ -971,7 +971,7 @@ nav {
 }
 
 .other-page h1 { 
-  font-size: 2.1rem; 
+  font-size: 2rem; 
   margin-top: 0;
 
   }
@@ -983,7 +983,7 @@ nav {
   font-size: 1.1rem; 
   }
 
-  .other-page .navbar {
+  .other-page .navbar, .footer-info {
     padding: 0.4rem;
   }
 
