@@ -1,4 +1,6 @@
 
+/* jshint esversion: 11 */
+
 /* global: modal, confetti */
 
 /* screens */

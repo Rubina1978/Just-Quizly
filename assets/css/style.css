@@ -852,7 +852,6 @@ nav {
     margin-top: 2rem;
     
   } 
-
  
 .custom-btn-easy, 
 .custom-btn-hard, 
@@ -869,9 +868,9 @@ nav {
   }
 
   .custom-btn-answer{
-    padding: 0.9rem;
-    margin: 0 auto;
-    max-width: 400px;
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 500px;
   }
 
 .start-btn {
@@ -944,11 +943,9 @@ nav {
   width: 100%;
   max-width: 600px;
  
-
 }
 
     /* error page */
-
 #home-btn {
   margin-top: 1.5rem;
   font-size: 1rem;
@@ -1035,9 +1032,9 @@ nav {
   }
   .container-quiz, .start-screen, .container-end{
     
-    max-width: 700px;
+    max-width: 600px;
     width: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0.6rem 0.9rem;
     
     
   }
@@ -1145,11 +1142,14 @@ font-size: 1.3rem;
   padding: 0.8rem;
 }
 
-.custom-btn-answer {
-  padding: 1.5rem;
-}
 #modal-icon {
   width: 28px;
+}
+
+.quiz-info {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  
 }
 
 .answers-container{
@@ -1158,18 +1158,20 @@ font-size: 1.3rem;
     justify-content: center;
     align-items: center;
     width: 80%;
-    height: 50vh;   
+    height: 60vh;  
+    padding: 0 0.6rem;
+     
   }
 
   .custom-btn-answer {
-    max-width: 400px;
+    max-width: 500px;
     padding: 1.5rem;
     margin: 0 auto;
   }
 .container-quiz, .container {
       width: 80%;
-      padding: 0.3rem 0; 
-      height: 80vh;
+      padding: 0.5rem 0; 
+     
   }
 
 .custom-btn-easy, 
