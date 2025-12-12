@@ -110,7 +110,7 @@ p {
 .container-end, .container, .container-quiz {
   width: 90%;
   margin: 0 auto;
-  padding: 0 auto;
+  padding: 0;
   background-color: #F7E7CE;
   border-radius: 10px;
   box-shadow: 5px 10px 20px #000000cc;
