@@ -149,11 +149,12 @@ Please note, there are services out there that can test multiple browser compati
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
-| Page | Chrome | Firefox | Safari | Notes |
+| Page | Chrome | Firefox | Edge | Notes |
 | --- | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/safari-home.png) | Works as expected |
-| Game | ![screenshot](documentation/browsers/chrome-game.png) | ![screenshot](documentation/browsers/firefox-game.png) | ![screenshot](documentation/browsers/safari-game.png) | Works as expected |
-| 404 | ![screenshot](documentation/browsers/chrome-404.png) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/safari-404.png) | Works as expected |
+| Home | ![screenshot](documentation/compatibility/screenshot-chrome-home.png) | ![screenshot](documentation/compatibility/screenshot-firefox-dev-ed-desktop.png) | ![screenshot](documentation/responsiveness/screenshot-home-desktop.png) | Works as expected |
+| Quiz | ![screenshot](documentation/compatibility/screenshot-chrome-quiz-page.png) | ![screenshot](documentation/compatibility/screenshot-firefox-dev-ed-quiz.png) | ![screenshot](documentation/responsiveness/screenshot-desktop-quiz-page.png) | Works as expected |
+| End-screen | ![screenshot](documentation/compatibility/screenshot-chrome-end-screen.png) | ![screenshot](documentation/compatibility/screenshot-firefox-dev-ed-end-page.png) | ![screenshot](documentation/responsiveness/screenshot-desktop-end-screen.png) | Works as expected |
+| 404 | ![screenshot](documentation/compatibility/screenshot-chrome-404.png) | ![screenshot](documentation/compatibility/screenshot-firefox-dev-ed-404-page.png) | ![screenshot](documentation/responsiveness/screenshot-desktop-404.png) | Works as expected |
 
 ## Lighthouse Audit
 

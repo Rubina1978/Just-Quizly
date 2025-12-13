@@ -711,19 +711,21 @@ nav {
     margin: 0;
     width: 90%;
     flex-shrink: 1;
-    height: 70vh;
+    max-height: 100vh;
+    
+    
 
   }
 
   .start-screen h1 {
     font-size: 1.2rem;
-    padding-top: 0.7rem;
+    padding-top: 0.4rem;
     margin-bottom: 0.2rem;
   }
 
   .start-screen h2 {
     font-size:1rem ;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     font-weight: 700;
   }
   .start-screen p {
@@ -739,15 +741,15 @@ nav {
   }
   .start-btn, .custom-btn-restart {
     font-size: 1rem;
-    margin: 1rem;
+    margin: 1.2rem;
     padding: 0.5rem 1.1rem;
    
   }
  /* quiz page */
   .question-text {
     font-size: 1.4rem;
-    margin-bottom: 0;
-    padding-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
    
   }
   .answers-container {
@@ -757,7 +759,8 @@ nav {
 
   .quiz-info p{
     font-size: 1.3rem; 
-    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
     padding: 0;
   }
 
