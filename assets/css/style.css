@@ -97,14 +97,15 @@ h2 {
   font-size: 0.9rem;
   margin: 0.3rem 0;
   letter-spacing: 0.1rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 p {
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 700;
   padding: 0;
   letter-spacing: 0.05rem;
+  margin-bottom: 0.4rem;
 }
 /* containers */
 .container-end, .container, .container-quiz {
@@ -128,7 +129,7 @@ p {
   padding: 0.2rem;
   margin: 0.2rem;
   border-radius: 5px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .difficulty,
@@ -165,7 +166,7 @@ p {
 }
 
 .topic-btn-geography {
-  background-color: #ef4c00;
+  background-color: rgb(204, 34, 90);
   color: #ffffff;
   transition: background-color 0.2s, transform 0.1s, box-shadow 0.1s;
   border: none;
@@ -352,7 +353,7 @@ p {
 
 /* Geography Hover and focus */
 .topic-btn-geography:hover {
-  background-color: #842e06;
+  background-color: #760025;
   color: white;
   box-shadow: none;
   transition: 0.3s ease-in-out;
@@ -367,6 +368,7 @@ p {
 #difficulty, #topics, .custom-btn-answer, .custom-btn-restart {
   width: 80%;
   text-transform: uppercase;
+  font-weight: 800;
 }
 
 /* answer buttons */
@@ -602,7 +604,7 @@ nav {
   h2 {
     font-size: 0.9rem;
     font-weight: 700;
-    margin-top: 0.8rem;
+    margin-top: 0.9rem;
   }
 
   p {
