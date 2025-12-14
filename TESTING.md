@@ -175,7 +175,7 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Home | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-home.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-home.png) |
 | Quiz page | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-quiz-page.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-quiz-page.png) |
 | End screen | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-end-screen.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-end-page.png) |
-| 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
+| 404 | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-404-page.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
 
 ## Defensive Programming
 
