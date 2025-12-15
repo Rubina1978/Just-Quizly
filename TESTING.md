@@ -158,24 +158,12 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 ## Lighthouse Audit
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports. Avoid testing the local version (Gitpod/VSCode/etc.), as this can have knock-on effects for performance. If you don't have "Lighthouse" in your Developer Tools, it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Unless your project is a single-page application (SPA), you should test Lighthouse Audit results for all of your pages, for both *mobile* and *desktop*.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-⚠️ --- END --- ⚠️
-
 I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-home.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-home.png) |
-| Quiz page | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-quiz-page.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-quiz-page.png) |
-| End screen | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-end-screen.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-end-page.png) |
-| 404 | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-404-page.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-404-page.png) |
+| Index | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-home.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-home.png) |
+| 404 | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-mobile-404.png) | ![screenshot](documentation/lighthouse-testing/screenshot-lighthouse-desktop-404.png) |
 
 ## Defensive Programming
 
@@ -220,11 +208,12 @@ Defensive programming was manually tested with the below user acceptance testing
 
 | Page/Feature | Expectation | Test | Result | Screenshot |
 | --- | --- | --- | --- | --- |
-| Calculator UI | Feature is expected to allow the user to input two numbers and select an operator (`+`, `-`, `*`, `/`). | Entered two numbers and selected each operator to perform calculations. | Calculations for all operators worked as expected. | ![screenshot](documentation/defensive/input-output.png) |
-| | Feature is expected to show an error message if inputs are empty (`NaN`). | Tried submitting calculations with empty input fields. | Error message displayed as expected. | ![screenshot](documentation/defensive/empty-inputs.png) |
-| | Feature is expected to display buttons that are clear, large, and easy to select on all devices. | Verified button sizes and usability across multiple devices (mobile, tablet, desktop). | Buttons were accessible and easy to use on all tested devices. | ![screenshot](documentation/defensive/responsive.png) |
-| | Feature is expected to use high-contrast colors and accessible fonts. | Checked contrast ratios using accessibility tools (e.g., Lighthouse, Wave). | Colors and fonts met accessibility standards. | ![screenshot](documentation/defensive/accessibility.png) |
-| | Feature is expected to have clear labels and instructions for user guidance. | Reviewed labels and instructions for clarity and ease of use. | Labels and instructions were clear and intuitive. | ![screenshot](documentation/defensive/labels-instructions.png) |
+| Difficulty selector| Feature is expected to allow the user to select a level of difficulty of the quiz and selected difficulty should highlight to indicates what the user selected and display questions of the level difficulty selected | Selected difficulty level and check functionality of each button | Difficulty selector on all options worked as expected, when selected difficulty the level of difficulty questions were displayed. | ![screenshot](documentation/Defensive-testing/screenshot-difficulty-selector-functionality.png) |
+| Topic selector | Feature is expected to allow the user to select a topic of the quiz and selected topic should higlight to indicate what was selected and display question of the topic selected. | Tried select topic and check functionality of each button | Topic selector on all options worked as expected, quiz contained questions on selected topic. | ![screenshot](documentation/Defensive-testing/screenshot-topic-selector-functionality.png) |
+| Alert | User cannot start quiz without selecting difficulty and topic. If topic and/or difficulty is not selected alert prompting to make selection pops up | Tried commence quiz without selection one or both selectors. | Alert works as expected, does not let user to commence quiz without making a selection to both difficulty and topic. | ![screenshot](documentation/Defensive-testing/screenshot-alert.png) |
+| Rules modal | Feature is expected to allow user to check rules how to play the quiz if wish to do so. When user click ok modal with rules should close off| clicked modal for seeing rules and clicked ok button to close it off. | Modal with rules opened up and when ok button was clicked, it closed off. | ![screenshot](documentation/Defensive-testing/screenshot-rules-modal.png) |
+| Mute button | Feature is expected to control wether user will play quiz with audio or on silence by clicking mute icon default to silence, audio included or silent play should indicate icon changing to volume on icon and go back to silence with icon off when user restart game. | Test play quiz with sound on and off | icon changed to volume on when pressed and all sounds played. For sound off mute icon went back to default sound off icon and no sounds were played | ![screenshot](documentation/Defensive-testing/screenshot-audio-on.png) ![screenshot](documentation/Defensive-testing/screenshot-audio-off.png) |
+| Start button | Feature is expected to take user to quiz page with questions and options after difficulty and topic is selected | Selected difficulty and topic then pressed Start | Start button worked as expected user taken to quiz page | ![screenshot](documentation/Defensive-testing/screenshot-start-button-transfer-to-quiz-page.png) |
 | Instant Calculation | Feature is expected to calculate and display results instantly after selecting an operator. | Selected operators after entering two numbers. | Results were displayed instantly. | ![screenshot](documentation/defensive/calc-speed.png) |
 | Error Handling | Feature is expected to display correct results even if an equation was input incorrectly. | Entered various incorrect equations and verified the results. | Correct results were displayed for all tested cases. | ![screenshot](documentation/defensive/error-handling.png) |
 | Score Tracker | Feature is expected to track the number of correct and incorrect equations. | Performed multiple calculations (correct and incorrect) and checked the score tracker. | Score tracker updated correctly for all tested scenarios. | ![screenshot](documentation/defensive/score-tracker.png) |
