@@ -130,7 +130,7 @@ Any remaining open issues can be tracked [here](https://github.com/Rubina1978/Ju
 
 | Issue | Screenshot |
 | --- | --- |
-| The project is designed to be responsive from `375px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute.On small mobiles up to `320px`it was not responsive, I have made it responsive regardless even Code Institute requires responsiveness from `375px` | ![screenshot](documentation\known-issues\nesthub-responsiveness.png) |
+| The project is designed to be responsive from `375px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute.On small mobiles up to `320px`it was not responsive, I have made it responsive regardless even Code Institute requires responsiveness from `375px` | ![screenshot](documentation/known-issues/nesthub-responsiveness.png) |
 | When checking with Wave, it showed alerts about h1-h6 but nothing in HTML validator | ![screenshot](documentation/known-issues/screenshot-wave-alert.png) |
 |Confetti sometimes does not play, usually when user goes directly from one game to another but refresh usually fix that, noted in bugs report | ![screenshot](documentation/bugs-report/open-issues.png)
 
