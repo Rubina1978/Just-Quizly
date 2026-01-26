@@ -3,6 +3,32 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
+## Manual vs Automatic testing
+The key part of the process of developing an app or website is not only the development itself but also a testing, which is the most important part of the development journey as it is extremely important that the application is in fully working status without any functional errors. There are two main ways of how to test an application - manual testing and automatic testing. Each method has it's pros and cons in the process of testing. 
+
+Manual testing is a way of testing the project functionality according to user stories, how it appears and working in different browsers, whether it is responsive and provide an excellent user experience(UX) no matter if the user interacts with the application on phones of various sizes, tablets, laptops desktops and large desktops. The concept is that another person or the developer impersonates a user of the application and manualy tests every aspect of the application - buttons, forms, the logic, responsiveness etc. 
+
+The advantage of manual testing is that it does not need any special software or specialized programming knowledge however the major drawbacks are that:
+* it is time consuming, as exhaustive testing of all scenarios in impossible.
+* if the project is on a big scale it will need larger team of testers, especially in high risk, defect-prone areas.
+* has high error rate because some testing areas can be missed and repeated testing can be less effective over the time.
+* testers might experience fatigue from the amount of testing tasks or be biased on some aspects of the project, which can lead to missed defects or uneven test coverage.
+
+On the other hand automatic testing is used a code to test a code, which has several advantages over manual testing. Some of the advantages are:
+* its much quicker as huge amount of tests can be run simultaneously in short space of time.
+* the tests are usually writter by the programmer him/herself as and when the project is being developed which makes them more efficient.
+* It allows to pick on errors early and quickly which safe lot of time.
+* Often the tests are written for specific cases
+
+However automatic testing has also its own limitation such as:
+* the effectivity of the test is influenced by the quality of writing the tests by the developer
+* Automatic tests don't test the User experience but the functions only
+
+Therefore the most effective way of testing the project is to use a combination of both - manual and automatic.
+
+For the purpose of the testing of the Quiz app, I have used manual testing for various reasons. The first reason why I have used manual testing is that I had a number of issues to upload the Node and the Jest itself, despite of closely following the setup instructions. The second reason was that because since my very first project manual testing was more familiar and straight forward for me as it allowed me to see the specific results for testing of each aspects of the project, despite it being very time consuming.
+
+
 ## Code Validation
 
 I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
